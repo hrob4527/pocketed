@@ -472,3 +472,12 @@ table.data tr.fee { color: var(--warn); }
   .row-2 { grid-template-columns: 1fr 1fr; }
   .nav .hide-sm { display: none; }
 }
+
+/* Pro gating */
+.license-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin: 0 0 16px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 4px; background: var(--card); font-size: 0.9rem; color: var(--ink-soft); }
+.license-bar.is-pro { border-color: #9fbf8f; background: #eef5e8; color: var(--ink); }
+.license-actions { display: flex; gap: 8px; }
+.pro-tag { display: inline-block; margin-left: 4px; padding: 1px 6px; border-radius: 999px; background: var(--copper); color: #fffaf2; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em; vertical-align: middle; }
+body.is-pro .pro-tag { display: none; }
+.pk-dialog { max-width: 32rem; width: calc(100% - 32px); border: 1px solid var(--line); border-radius: 6px; padding: 0; background: var(--card); color: var(--ink); }
+.pk-dialog::backdrop { background: rgba(28, 36, 24, 0.35); }

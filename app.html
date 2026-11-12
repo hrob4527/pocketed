@@ -36,14 +36,19 @@
   </header>
 
   <main class="app-main wrap">
-    <p class="fine" style="margin:0 0 16px">Pro features are currently unlocked so you can try them. <a class="lemonsqueezy-button" href="https://pcketedapp.lemonsqueezy.com/checkout/buy/44e338e5-789f-4146-938b-cc03b61c46f0">Buy Pro — $19</a> if you want to purchase. Nothing you enter is uploaded.</p>
-
+    <div class="license-bar" id="license-bar">
+      <span id="license-status">Free version. Pro adds unlimited payout CSVs, reverse pricing, exports, and saved defaults. Nothing you enter is uploaded.</span>
+      <span class="license-actions">
+        <button type="button" class="btn btn-ghost" id="btn-enter-key" style="padding:6px 10px">Enter license key</button>
+        <button type="button" class="btn btn-ghost hidden" id="btn-remove-key" style="padding:6px 10px">Remove key</button>
+      </span>
+    </div>
     <!-- Listing mode -->
     <div id="mode-listing" class="app-grid" role="tabpanel">
       <form class="panel" id="listing-form" autocomplete="off">
         <div class="panel-head">
           <h2>Price a listing</h2>
-          <button type="button" class="btn btn-ghost" id="btn-save-defaults" style="padding:8px 12px">Save defaults</button>
+          <button type="button" class="btn btn-ghost" id="btn-save-defaults" style="padding:8px 12px">Save defaults <span class="pro-tag">Pro</span></button>
         </div>
 
         <div class="row-2">
@@ -133,7 +138,7 @@
         </div>
 
         <div class="field" style="margin-top:8px">
-          <label for="targetTakehome">Reverse: price to hit a target pocketed amount</label>
+          <label for="targetTakehome">Reverse: price to hit a target pocketed amount <span class="pro-tag">Pro</span></label>
           <div class="row-2">
             <div class="prefix"><span>$</span><input id="targetTakehome" type="number" min="0" step="0.01" placeholder="e.g. 25" /></div>
             <button type="button" class="btn" id="btn-reverse">Solve for item price</button>
@@ -160,7 +165,7 @@
     <div id="mode-payout" class="app-grid hidden" role="tabpanel">
       <section class="panel">
         <h2>Read a payout CSV</h2>
-        <p class="fine" style="margin-top:0">Drop an Etsy payment-account export, a Stripe payout report, or any CSV with Amount / Fees / Net columns. Sample files are invented example data.</p>
+        <p class="fine" style="margin-top:0">Drop an Etsy payment-account export, a Stripe payout report, or any CSV with Amount / Fees / Net columns. Sample files are invented example data. <span id="free-import-note"></span></p>
         <div class="drop" id="drop-zone">
           <strong>Drop a CSV here</strong>
           <div>or choose a file from this device</div>
@@ -194,8 +199,8 @@
         <div class="kpi" id="payout-kpis"></div>
         <table class="ledger" id="payout-ledger"></table>
         <div class="actions">
-          <button type="button" class="btn btn-ghost" id="btn-export-csv" disabled>Export summary CSV</button>
-          <button type="button" class="btn btn-ghost" id="btn-print-payout" disabled>Print report</button>
+          <button type="button" class="btn btn-ghost" id="btn-export-csv" disabled>Export summary CSV <span class="pro-tag">Pro</span></button>
+          <button type="button" class="btn btn-ghost" id="btn-print-payout" disabled>Print report <span class="pro-tag">Pro</span></button>
         </div>
         <p class="legal">Your file stays in this browser. Figures depend on the columns in the export. Not tax, legal, or accounting advice.</p>
       </aside>
@@ -211,8 +216,39 @@
     </div>
   </dialog>
 
+
+  <dialog id="license-dialog" class="pk-dialog">
+    <form method="dialog" id="license-form" style="padding:20px 22px">
+      <h2 style="margin:0 0 10px;font-family:var(--serif)">Enter your license key</h2>
+      <p style="margin:0 0 12px;color:var(--ink-soft);font-size:0.95rem">Your key is in the receipt email from Lemon Squeezy after you buy Pocketed Pro. It’s checked with Lemon Squeezy and then stored only in this browser.</p>
+      <div class="field">
+        <label for="license-input">License key</label>
+        <input id="license-input" type="text" autocomplete="off" spellcheck="false" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
+      </div>
+      <p class="hint" id="license-error" role="alert" style="color:var(--copper-dark);min-height:1.2em;margin:4px 0 10px"></p>
+      <div class="actions" style="margin-top:0">
+        <button type="button" class="btn btn-copper" id="btn-activate-key">Activate</button>
+        <button type="button" class="btn btn-ghost" id="btn-cancel-key">Cancel</button>
+        <a class="btn btn-ghost lemonsqueezy-button pk-buy" href="https://pcketedapp.lemonsqueezy.com/checkout/buy/44e338e5-789f-4146-938b-cc03b61c46f0">Buy Pro — $19</a>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="upsell-dialog" class="pk-dialog">
+    <div style="padding:20px 22px">
+      <h2 style="margin:0 0 10px;font-family:var(--serif)" id="upsell-title">That’s a Pro feature</h2>
+      <p style="margin:0 0 14px;color:var(--ink-soft);font-size:0.95rem" id="upsell-text">Pocketed Pro is a one-time $19 purchase: unlimited payout CSVs, reverse pricing, summary exports, and saved shop defaults.</p>
+      <div class="actions" style="margin-top:0">
+        <a class="btn btn-copper lemonsqueezy-button pk-buy" href="https://pcketedapp.lemonsqueezy.com/checkout/buy/44e338e5-789f-4146-938b-cc03b61c46f0">Buy Pro — $19</a>
+        <button type="button" class="btn btn-ghost" id="btn-upsell-key">I have a key</button>
+        <button type="button" class="btn btn-ghost" id="btn-upsell-close">Not now</button>
+      </div>
+    </div>
+  </dialog>
+
   <script src="fees.js"></script>
   <script src="csv.js"></script>
+  <script src="license.js"></script>
   <script src="app.js"></script>
   <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 </body>

@@ -1,6 +1,7 @@
 (function () {
   const Fees = window.TakehomeFees;
   const Csv = window.TakehomeCsv;
+  const License = window.PocketedLicense;
   const STORAGE_KEY = "pocketed.defaults.v1";
 
   const $ = (id) => document.getElementById(id);
@@ -83,6 +84,7 @@
   }
 
   function solveReverse() {
+    if (!requirePro("Reverse pricing is a Pro feature", "Pocketed Pro solves for the item price that hits the take-home you want, after every fee.")) return;
     const status = $("reverse-status");
     const target = $("targetTakehome").value;
     if (target === "" || Number(target) < 0) {
@@ -101,6 +103,7 @@
   }
 
   function saveDefaults() {
+    if (!requirePro("Saved defaults are a Pro feature", "Pocketed Pro remembers your shop’s platform, costs, and tax reserve in this browser.")) return;
     const data = listingInput();
     data.salesTaxRatePercent = $("salesTaxRate").value;
     data.customRatePercent = $("customRate").value;
@@ -113,6 +116,7 @@
   }
 
   function loadDefaults() {
+    if (!License.isPro()) return;
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return;
@@ -363,6 +367,7 @@
 
   function exportSummary() {
     if (!payoutState.summary) return;
+    if (!requirePro("Exports are a Pro feature", "Pocketed Pro exports a cleaned summary CSV and prints a one-page payout report.")) return;
     const s = payoutState.summary;
     const lines = [
       ["Field", "Amount"],
@@ -442,8 +447,20 @@
       if (file.files[0]) readFile(file.files[0]);
     });
     function readFile(f) {
+      if (!License.canImportOwnCsv()) {
+        file.value = "";
+        requirePro(
+          "You’ve used your free payout import",
+          "The free version reads one of your own payout CSVs (the sample files are always free). Pocketed Pro reads as many as you like."
+        );
+        return;
+      }
       const reader = new FileReader();
-      reader.onload = () => handleCsvText(String(reader.result || ""), f.name);
+      reader.onload = () => {
+        License.recordOwnCsvImport();
+        renderLicense();
+        handleCsvText(String(reader.result || ""), f.name);
+      };
       reader.readAsText(f);
     }
     $("btn-sample-etsy").addEventListener("click", () => loadLocalSample("sample-data/etsy-payout-sample.csv", "etsy-payout-sample.csv"));
@@ -451,7 +468,9 @@
     $("payoutCosts").addEventListener("input", renderPayoutSummary);
     $("payoutReserve").addEventListener("input", renderPayoutSummary);
     $("btn-export-csv").addEventListener("click", exportSummary);
-    $("btn-print-payout").addEventListener("click", () => window.print());
+    $("btn-print-payout").addEventListener("click", () => {
+      if (requirePro("Payout reports are a Pro feature", "Pocketed Pro exports a cleaned summary CSV and prints a one-page payout report.")) window.print();
+    });
   }
 
   function bindChrome() {
@@ -461,6 +480,121 @@
     $("btn-close-sources").addEventListener("click", () => $("sources-dialog").close());
     if (location.hash === "#payout") setMode("payout");
   }
+
+  // ---- Pro license gating ----
+  function requirePro(title, text) {
+    if (License.isPro()) return true;
+    $("upsell-title").textContent = title || "That’s a Pro feature";
+    if (text) $("upsell-text").textContent = text + " One-time $19.";
+    $("upsell-dialog").showModal();
+    return false;
+  }
+
+  function renderLicense(message) {
+    const pro = License.isPro();
+    const state = License.readState();
+    document.body.classList.toggle("is-pro", pro);
+    $("license-bar").classList.toggle("is-pro", pro);
+    $("btn-enter-key").classList.toggle("hidden", pro);
+    $("btn-remove-key").classList.toggle("hidden", !state);
+    document.querySelectorAll(".app-bar .lemonsqueezy-button").forEach((a) => a.classList.toggle("hidden", pro));
+    $("license-status").textContent =
+      message ||
+      (pro
+        ? "Pocketed Pro is unlocked in this browser (key " + License.maskKey(state.key) + "). Nothing you enter is uploaded."
+        : "Free version. Pro adds unlimited payout CSVs, reverse pricing, exports, and saved defaults. Nothing you enter is uploaded.");
+    const left = License.CONFIG.FREE_IMPORT_LIMIT - License.freeImportsUsed();
+    $("free-import-note").textContent = pro
+      ? ""
+      : left > 0
+      ? "Free version: " + left + " of your own CSV import" + (left === 1 ? "" : "s") + " left."
+      : "Free version: own-CSV import used. Samples still work.";
+  }
+
+  function openLicenseDialog() {
+    $("upsell-dialog").close();
+    $("license-error").textContent = "";
+    $("license-dialog").showModal();
+    $("license-input").focus();
+  }
+
+  function activateKey() {
+    const btn = $("btn-activate-key");
+    btn.disabled = true;
+    $("license-error").textContent = "Checking with Lemon Squeezy…";
+    License.activate($("license-input").value).then((r) => {
+      btn.disabled = false;
+      if (!r.ok) {
+        $("license-error").textContent = r.error;
+        return;
+      }
+      $("license-input").value = "";
+      $("license-dialog").close();
+      renderLicense("Pocketed Pro unlocked. Thanks for buying!");
+    });
+  }
+
+  function removeKey() {
+    if (!window.confirm("Remove the license key from this browser? You can enter it again later.")) return;
+    License.deactivate().then(() => renderLicense("License key removed from this browser."));
+  }
+
+  function bindLicense() {
+    $("btn-enter-key").addEventListener("click", openLicenseDialog);
+    $("btn-upsell-key").addEventListener("click", openLicenseDialog);
+    $("btn-remove-key").addEventListener("click", removeKey);
+    $("btn-activate-key").addEventListener("click", activateKey);
+    $("license-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      activateKey();
+    });
+    $("btn-cancel-key").addEventListener("click", () => $("license-dialog").close());
+    $("btn-upsell-close").addEventListener("click", () => $("upsell-dialog").close());
+    // Close our modal before Lemon Squeezy's overlay opens so it isn't hidden behind it.
+    document.querySelectorAll(".pk-buy").forEach((a) =>
+      a.addEventListener("click", () => {
+        $("upsell-dialog").close();
+        $("license-dialog").close();
+      })
+    );
+    // After a successful checkout in the overlay, prompt for the emailed key.
+    window.addEventListener("load", () => {
+      if (window.LemonSqueezy && typeof window.LemonSqueezy.Setup === "function") {
+        window.LemonSqueezy.Setup({
+          eventHandler: (event) => {
+            if (event && event.event === "Checkout.Success") {
+              renderLicense("Thanks for buying! Your license key is in the receipt email. Enter it here to unlock Pro.");
+            }
+          },
+        });
+      }
+    });
+  }
+
+  function revalidateLicense() {
+    if (!License.readState()) return;
+    License.validateStored().then((r) => {
+      if (r.pro && !r.offline) {
+        loadDefaults();
+        renderListing();
+        renderLicense();
+      } else if (r.pro && r.offline) {
+        renderLicense("Pocketed Pro is unlocked (offline: couldn’t reach Lemon Squeezy, using your last check).");
+      } else if (r.offline) {
+        renderLicense("Couldn’t reach Lemon Squeezy to re-check your key. Connect to the internet to keep using Pro.");
+      } else {
+        renderLicense(
+          r.reason === "wrong-product"
+            ? "That license key isn’t for Pocketed Pro, so it was removed."
+            : "Your license key is no longer valid" + (r.error ? " (" + r.error + ")" : "") + ", so it was removed from this browser."
+        );
+      }
+    });
+  }
+
+  bindLicense();
+  renderLicense();
+  revalidateLicense();
 
   loadDefaults();
   togglePlatformOptions();
