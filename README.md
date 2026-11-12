@@ -50,3 +50,7 @@ node test.js
 Fee rates were last checked on 11 November 2026 against the official pages linked on the landing page and in the in-app “Rates & sources” dialog.
 
 Not tax, legal, or accounting advice. Not affiliated with Etsy, Stripe, or Gumroad.
+
+## Shop
+
+`shop.html` lists the digital products in `shop/catalog.json` (covers in `shop/covers/`). Each product has a `checkout_url` field; paste its Lemon Squeezy checkout link there and the card shows a Buy button (lemon.js overlay). An empty `checkout_url` shows "Coming soon".

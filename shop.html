@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pocketed Shop — Templates, trackers and planners for online sellers</title>
+  <meta name="description" content="Spreadsheets, printable planners, checklists and message templates for Etsy, Shopify and eBay sellers. Instant digital downloads from Pocketed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2.5' y='2.5' width='27' height='27' rx='7' fill='%23fffaf2' stroke='%231c2418' stroke-width='1.7'/%3E%3Cpath d='M9 13.2 V21.2 C9 24.1 11.8 26.4 16 26.4 C20.2 26.4 23 24.1 23 21.2 V13.2' fill='none' stroke='%231c2418' stroke-width='1.55' stroke-linejoin='round'/%3E%3Cpath d='M9 13.2 C12.4 16.2 19.6 16.2 23 13.2' fill='none' stroke='%231c2418' stroke-width='1.55' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='19.2' r='2.35' fill='%23b5521f'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html">
+      <svg class="logo-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false">
+        <rect x="2.5" y="2.5" width="27" height="27" rx="7" fill="#fffaf2" stroke="#1c2418" stroke-width="1.7"/>
+        <path d="M9 13.2 V21.2 C9 24.1 11.8 26.4 16 26.4 C20.2 26.4 23 24.1 23 21.2 V13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linejoin="round"/>
+        <path d="M9 13.2 C12.4 16.2 19.6 16.2 23 13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linecap="round"/>
+        <circle cx="16" cy="19.2" r="2.35" fill="#b5521f"/>
+      </svg>
+      <span class="logo-word">Pocketed</span>
+    </a>
+    <nav class="nav">
+      <a class="hide-sm" href="index.html">Pocketed Pro</a>
+      <a href="shop.html" aria-current="page">Shop</a>
+      <a class="btn btn-ghost" href="app.html">Open the app</a>
+    </nav>
+  </header>
+
+  <main class="shop wrap">
+    <section class="shop-hero">
+      <p class="eyebrow">The Pocketed Shop</p>
+      <h1>Templates, trackers and planners for online sellers.</h1>
+      <p class="lede">Spreadsheets that do the math, printable planners and checklists, and ready-to-send message templates for Etsy, Shopify, eBay and craft-fair sellers. Instant digital downloads.</p>
+    </section>
+
+    <section class="shop-controls" aria-label="Filter products">
+      <input id="shop-search" type="search" placeholder="Search products" aria-label="Search products" />
+      <div id="shop-filters" class="chips" role="group" aria-label="Category"></div>
+      <select id="shop-format" aria-label="Format">
+        <option value="">All formats</option>
+      </select>
+      <select id="shop-sort" aria-label="Sort">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+        <option value="title">Name</option>
+      </select>
+    </section>
+    <p id="shop-count" class="fine" aria-live="polite"></p>
+    <section id="shop-grid" class="shop-grid" aria-label="Products"></section>
+    <noscript><p>Turn on JavaScript to browse the shop.</p></noscript>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Pocketed · digital downloads, no physical items ship · not affiliated with Etsy, Shopify, eBay or any marketplace.</span>
+      <span>Not tax, legal, or accounting advice.</span>
+    </div>
+  </footer>
+  <script src="shop.js" defer></script>
+  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+</body>
+</html>

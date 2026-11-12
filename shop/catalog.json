@@ -1,0 +1,757 @@
+{
+  "_note": "Paste each product's Lemon Squeezy checkout link into checkout_url. Empty = 'Coming soon'.",
+  "products": [
+    {
+      "slug": "profit-per-item-calculator",
+      "title": "Profit Per Item Calculator",
+      "price": 7,
+      "category": "Pricing & profit",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Fees, costs and your time in, real take-home out.",
+      "description": "A spreadsheet that shows what you actually keep from each product after marketplace fees, materials, packaging, the shipping label, your labor and a tax reserve. Fee settings come prefilled with Etsy U.S. published rates and are fully editable for Shopify, eBay or any other platform. Works in Excel, Google Sheets and Numbers.",
+      "includes": [
+        "Settings sheet with editable fee rates",
+        "Products sheet for 150 items with automatic fees, profit, margin and take-home",
+        "Two worked examples"
+      ],
+      "cover": "shop/covers/profit-per-item-calculator.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "product-pricing-worksheet",
+      "title": "Product Pricing Worksheet",
+      "price": 6,
+      "category": "Pricing & profit",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Price for profit, not for guesswork.",
+      "description": "A pricing worksheet that turns materials, packaging, labor, overhead and fees into a suggested price that holds your target margin. It also shows the classic 2x/4x wholesale and retail benchmarks and the margin at whatever price you choose. Includes an overhead helper to spread monthly costs per unit.",
+      "includes": [
+        "Pricing sheet with margin-safe suggested price",
+        "2x/4x benchmark columns",
+        "Overhead-per-unit helper"
+      ],
+      "cover": "shop/covers/product-pricing-worksheet.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "inventory-tracker",
+      "title": "Inventory Tracker with Reorder Alerts",
+      "price": 8,
+      "category": "Inventory & operations",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Know what's on the shelf and when to restock.",
+      "description": "An inventory spreadsheet with a stock-movement log. Record items received, sold, returned or damaged and on-hand counts, inventory value and REORDER alerts update automatically. Built for up to 300 SKUs and 1,000 stock movements; easy to extend.",
+      "includes": [
+        "Inventory sheet for 300 SKUs with automatic on-hand and value",
+        "Stock log with drop-down movement types",
+        "REORDER status flag"
+      ],
+      "cover": "shop/covers/inventory-tracker.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "tax-set-aside-planner",
+      "title": "Tax Set-Aside Planner",
+      "price": 7,
+      "category": "Money & taxes",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Monthly set-aside, grouped by IRS quarter.",
+      "description": "A U.S.-focused planner that estimates how much of each month's profit to put aside for self-employment and income tax, tracks what you actually saved, and totals it by the four IRS estimated-tax periods. You enter your own rates; nothing is hidden in the formulas. A planning aid, not tax advice.",
+      "includes": [
+        "Monthly profit and set-aside sheet",
+        "Quarterly totals by IRS period with typical due dates",
+        "Editable rate settings"
+      ],
+      "cover": "shop/covers/tax-set-aside-planner.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "shipping-cost-calculator",
+      "title": "Shipping Cost Calculator",
+      "price": 6,
+      "category": "Shipping & fulfillment",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Dimensional weight, cheapest carrier, and whether you charge enough.",
+      "description": "A shipping spreadsheet that works out billable weight from box size and packed weight, compares the rates you collect from up to three carriers, flags the cheapest, and shows whether the shipping you charge buyers covers the label. Carrier names and the dimensional-weight divisor are editable.",
+      "includes": [
+        "Package sheet for 100 box/product combos",
+        "Automatic actual vs. dimensional weight",
+        "Cheapest-carrier pick and shipping profit/loss"
+      ],
+      "cover": "shop/covers/shipping-cost-calculator.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "bookkeeping-starter-kit",
+      "title": "Bookkeeping Starter Kit",
+      "price": 12,
+      "category": "Money & taxes",
+      "format": "Bundle (ZIP)",
+      "tagline": "A ledger, P&L and weekly routine for clean books.",
+      "description": "Everything a new seller needs to keep clean books: an income and expense ledger with 17 seller-specific categories, automatic summary by category and monthly profit & loss, plus a printable guide with a 15-minute weekly routine, a monthly close checklist and a category cheat sheet.",
+      "includes": [
+        "Ledger spreadsheet with 2,000 rows and drop-down categories",
+        "Automatic category summary and monthly P&L",
+        "Bookkeeping guide PDF with weekly and monthly checklists"
+      ],
+      "cover": "shop/covers/bookkeeping-starter-kit.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "mileage-log",
+      "title": "Business Mileage Log",
+      "price": 4,
+      "category": "Money & taxes",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Every supply run and post office trip, logged.",
+      "description": "A clean mileage log for sellers who drive for their business. Odometer or one-way entries, round-trip doubling, running totals and a deduction estimate at the standard mileage rate you set. Keeps the date, destination and business purpose the IRS asks you to record.",
+      "includes": [
+        "500-trip log with totals",
+        "Round-trip toggle",
+        "Editable mileage rate"
+      ],
+      "cover": "shop/covers/mileage-log.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "materials-cost-calculator",
+      "title": "Materials Cost & Recipe Calculator",
+      "price": 6,
+      "category": "Pricing & profit",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Bulk supplies in, exact cost per product out.",
+      "description": "For makers who buy supplies in bulk: enter what you paid for each pack, list how much of each material goes into a product, and get an exact material cost per product, including shipping on supplies and a waste allowance. Feeds straight into your pricing.",
+      "includes": [
+        "Materials sheet with true cost per unit",
+        "Product recipe (bill of materials) sheet",
+        "Product cost roll-up with waste allowance"
+      ],
+      "cover": "shop/covers/materials-cost-calculator.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "break-even-calculator",
+      "title": "Break-Even Calculator",
+      "price": 5,
+      "category": "Money & taxes",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "How many sales a month before you're actually profitable.",
+      "description": "Find the number of monthly sales you need to cover fixed costs, and to hit a profit target, from your average price, per-sale costs and fees. A what-if table shows how raising or lowering your price changes the sales you need.",
+      "includes": [
+        "Fixed cost list",
+        "Break-even and target-profit summary",
+        "What-if price table"
+      ],
+      "cover": "shop/covers/break-even-calculator.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "multichannel-sales-tracker",
+      "title": "Multichannel Sales Tracker",
+      "price": 8,
+      "category": "Sales & marketing",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Etsy, Shopify, eBay and in-person sales in one place.",
+      "description": "One order log for every channel you sell on, with automatic net profit per order and a side-by-side comparison of orders, revenue, net profit, average order value and margin by channel. See which channel is actually worth your time.",
+      "includes": [
+        "2,000-row order log",
+        "Channel drop-downs",
+        "By-channel comparison dashboard"
+      ],
+      "cover": "shop/covers/multichannel-sales-tracker.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "cash-flow-forecast",
+      "title": "12-Month Cash Flow Forecast",
+      "price": 8,
+      "category": "Money & taxes",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "See a cash crunch months before it happens.",
+      "description": "A month-by-month cash flow forecast for small online shops. Enter expected sales and planned spending on inventory, shipping, fees, ads, software, taxes and your own pay; ending cash rolls forward automatically and any month that would dip below zero is flagged.",
+      "includes": [
+        "12-month rolling forecast",
+        "Automatic ending-cash roll-forward",
+        "Shortfall warnings"
+      ],
+      "cover": "shop/covers/cash-flow-forecast.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "wholesale-pricing-line-sheet",
+      "title": "Wholesale Pricing Calculator & Line Sheet",
+      "price": 7,
+      "category": "Pricing & profit",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Price for stores and send a clean line sheet.",
+      "description": "Set wholesale and suggested retail prices from your unit cost with adjustable multipliers, check your wholesale margin, and get a line sheet that fills itself in, ready to print or export as PDF for boutiques and shops.",
+      "includes": [
+        "Wholesale and MSRP calculator",
+        "Auto-filling line sheet",
+        "Terms and minimums settings"
+      ],
+      "cover": "shop/covers/wholesale-pricing-line-sheet.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "discount-impact-calculator",
+      "title": "Discount & Sale Impact Calculator",
+      "price": 5,
+      "category": "Sales & marketing",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Know what a 20%-off sale really costs you.",
+      "description": "A quick calculator that shows profit per sale at each discount level and how many extra sales you'd need to break even on the promotion. Use it before every coupon, holiday sale or free-shipping offer.",
+      "includes": [
+        "Ten discount scenarios from 5% to 60%",
+        "Sales-needed-to-match column",
+        "Loses-money warning"
+      ],
+      "cover": "shop/covers/discount-impact-calculator.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "ad-spend-roas-tracker",
+      "title": "Ad Spend & ROAS Tracker",
+      "price": 6,
+      "category": "Sales & marketing",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Find out if your ads actually make money.",
+      "description": "Track weekly ad spend, clicks, orders and revenue across Etsy Ads, Meta, Pinterest, TikTok and Google. The sheet calculates click-through rate, cost per click, conversion rate, ROAS, profit after ads and your break-even ROAS, then labels each campaign Profitable or Losing money.",
+      "includes": [
+        "Weekly ad log for any platform",
+        "ROAS vs. break-even ROAS verdict",
+        "Totals row"
+      ],
+      "cover": "shop/covers/ad-spend-roas-tracker.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "custom-order-tracker",
+      "title": "Custom Order Tracker",
+      "price": 6,
+      "category": "Inventory & operations",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Every personalized order, deadline and deposit in one view.",
+      "description": "A tracker for custom and made-to-order work: customer, personalization details, price, deposit and balance, ship-by countdown, status from Inquiry through Delivered, and a DUE SOON flag so no order slips.",
+      "includes": [
+        "500-order tracker",
+        "Status drop-down with 9 stages",
+        "Ship-by countdown and DUE SOON flag"
+      ],
+      "cover": "shop/covers/custom-order-tracker.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "supplier-comparison-sheet",
+      "title": "Supplier Comparison Sheet",
+      "price": 5,
+      "category": "Inventory & operations",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Pick suppliers on true landed cost, not sticker price.",
+      "description": "Compare suppliers side by side on landed cost per unit, minimum order, lead time, quality and reliability, with a place for contacts, sample status and notes. Useful for makers, resellers and anyone sourcing packaging.",
+      "includes": [
+        "150-row supplier directory",
+        "Landed cost per unit formula",
+        "Quality/reliability scoring"
+      ],
+      "cover": "shop/covers/supplier-comparison-sheet.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "product-launch-tracker",
+      "title": "Product Launch Tracker",
+      "price": 6,
+      "category": "Planning & productivity",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "26-step launch plan with deadlines and overdue flags.",
+      "description": "A spreadsheet launch plan for a new product, prefilled with 26 practical tasks from research and pricing through photos, listing, packaging, marketing and the 7-day review. Add due dates and track status, countdowns and overdue tasks.",
+      "includes": [
+        "26 prefilled launch tasks",
+        "Status drop-down and due-date countdown",
+        "OVERDUE flag"
+      ],
+      "cover": "shop/covers/product-launch-tracker.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "returns-refunds-log",
+      "title": "Returns & Refunds Log",
+      "price": 4,
+      "category": "Customer service",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Track what returns really cost and why they happen.",
+      "description": "A log for returns, refunds and replacements that totals the real cost of each one, including return shipping and unsellable items, and summarizes returns by reason so you can spot listing, sizing or packaging problems.",
+      "includes": [
+        "500-row returns log",
+        "True cost per return",
+        "Summary by reason"
+      ],
+      "cover": "shop/covers/returns-refunds-log.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "craft-fair-profit-tracker",
+      "title": "Craft Fair & Market Profit Tracker",
+      "price": 6,
+      "category": "Sales & marketing",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Which markets are worth your Saturday?",
+      "description": "Track every craft fair, pop-up and farmers market: booth fee, travel, card fees, sales, cost of goods and all-in hours, with profit per hour to compare events. Includes a pack-and-count inventory sheet that calculates what sold.",
+      "includes": [
+        "Event profit log with profit per hour",
+        "Pack-and-count event inventory",
+        "Go-again rating"
+      ],
+      "cover": "shop/covers/craft-fair-profit-tracker.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "reseller-flip-log",
+      "title": "Reseller Sourcing & Flip Log",
+      "price": 7,
+      "category": "Inventory & operations",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "From thrift-store find to sold, with real profit and ROI.",
+      "description": "A sourcing and sales log for resellers on eBay, Poshmark, Mercari, Depop and similar sites. Record cost, listing and sale details to get profit, ROI, days to sell and status for every item, and spot stale listings at a glance.",
+      "includes": [
+        "2,000-item log",
+        "Profit, ROI and days-to-sell formulas",
+        "Auto status: Unlisted, Listed, Sold"
+      ],
+      "cover": "shop/covers/reseller-flip-log.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "listing-keyword-planner",
+      "title": "Listing Keyword & Tag Planner",
+      "price": 5,
+      "category": "Listings & SEO",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Collect keywords, check title and tag lengths, measure results.",
+      "description": "A keyword workbook for marketplace sellers: gather search phrases by source, rate relevance and competition, draft titles with a live character count, check tags against length limits, and compare views before and after a change.",
+      "includes": [
+        "Keyword bank with before/after views",
+        "Title length checker",
+        "Tag length and count checker"
+      ],
+      "cover": "shop/covers/listing-keyword-planner.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "social-content-calendar",
+      "title": "Social Media Content Calendar",
+      "price": 6,
+      "category": "Sales & marketing",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "A year of posts planned, with 35 ideas to start.",
+      "description": "A full-year social media calendar for small shops, with platform, content pillar, hook, caption, asset, status and results columns, a 35-idea bank sorted by pillar, and a pillar-mix summary so your feed isn't all sales posts.",
+      "includes": [
+        "365-day calendar sheet",
+        "35-idea bank",
+        "Pillar mix summary"
+      ],
+      "cover": "shop/covers/social-content-calendar.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "revenue-goal-tracker",
+      "title": "Revenue Goal Tracker",
+      "price": 5,
+      "category": "Planning & productivity",
+      "format": "Spreadsheet (XLSX)",
+      "tagline": "Turn a yearly goal into monthly targets you can hit.",
+      "description": "Break an annual revenue goal into seasonally weighted monthly targets, then track actual revenue, orders, variance, cumulative progress, percent of goal and average order value through the year.",
+      "includes": [
+        "Seasonally weighted monthly targets",
+        "Variance and cumulative progress",
+        "Average order value"
+      ],
+      "cover": "shop/covers/revenue-goal-tracker.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "listing-seo-checklist",
+      "title": "Listing SEO Checklist",
+      "price": 5,
+      "category": "Listings & SEO",
+      "format": "Guide PDF",
+      "tagline": "Get found in marketplace search, step by step.",
+      "description": "A practical checklist for writing listings that marketplace search and real shoppers both understand: keyword research, titles, tags and attributes, descriptions, photos, pricing signals and a monthly review routine. Works for Etsy, eBay, Shopify and similar platforms.",
+      "includes": [
+        "Research, title, tags, description, photo and trust checklists",
+        "Monthly review table",
+        "Fill-in listing worksheet"
+      ],
+      "cover": "shop/covers/listing-seo-checklist.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "product-photo-shot-list",
+      "title": "Product Photo Shot List & Setup Guide",
+      "price": 6,
+      "category": "Listings & SEO",
+      "format": "Guide PDF",
+      "tagline": "The 12 shots every listing needs, and how to light them at home.",
+      "description": "A shot list and setup guide for taking clear product photos at home with a phone: the 12 shots that answer buyers' questions, a window-light setup, background and prop tips, a camera settings checklist, editing steps and a printable per-product shoot sheet.",
+      "includes": [
+        "12-shot list with purpose of each shot",
+        "Home window-light setup and camera checklist",
+        "Editing steps and printable shoot sheet"
+      ],
+      "cover": "shop/covers/product-photo-shot-list.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "printable-seller-planner",
+      "title": "Printable Seller Business Planner",
+      "price": 12,
+      "category": "Planning & productivity",
+      "format": "Printable PDF",
+      "tagline": "Undated monthly and weekly pages built for shop owners.",
+      "description": "An undated, printable business planner for online sellers: annual goals and numbers, 12 monthly calendar pages with targets, 4 reusable weekly pages split into make, market and admin, an order log, product ideas, a monthly money snapshot and a quarterly review. Print once or reprint pages as needed. U.S. Letter size.",
+      "includes": [
+        "Annual goals and numbers",
+        "12 undated monthly pages and 4 weekly pages",
+        "Order log, product ideas, money snapshot, quarterly review"
+      ],
+      "cover": "shop/covers/printable-seller-planner.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "shop-launch-checklist",
+      "title": "New Shop Launch Checklist",
+      "price": 5,
+      "category": "Planning & productivity",
+      "format": "Printable PDF",
+      "tagline": "Everything to set up before you open, in order.",
+      "description": "A printable, ordered checklist for opening an online shop: business basics, branding, products and pricing, listings, policies, shipping, payments and money, launch week and the first 30 days. Platform-neutral for Etsy, Shopify, eBay and others.",
+      "includes": [
+        "9-stage launch checklist",
+        "Business, brand, listing, policy, shipping and money steps",
+        "Launch week and first-30-days plan"
+      ],
+      "cover": "shop/covers/shop-launch-checklist.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "holiday-season-planner",
+      "title": "Holiday Season Prep Planner",
+      "price": 7,
+      "category": "Planning & productivity",
+      "format": "Printable PDF",
+      "tagline": "Plan Q4 early: stock, deadlines, promos and posts.",
+      "description": "A printable Q4 planning workbook for online sellers: a timeline from late summer to January, last year's numbers review, gift-focused product plan, inventory and supply estimates, shipping deadline tracker, promotion calendar, content plan and a January wrap-up.",
+      "includes": [
+        "August-to-January timeline",
+        "Product, supply and promotion planning pages",
+        "Shipping deadline tracker and January wrap-up"
+      ],
+      "cover": "shop/covers/holiday-season-planner.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "packaging-unboxing-guide",
+      "title": "Packaging & Unboxing Guide",
+      "price": 5,
+      "category": "Shipping & fulfillment",
+      "format": "Guide PDF",
+      "tagline": "Packaging that protects, delights and doesn't kill your margin.",
+      "description": "A practical guide to packaging for small sellers: protecting fragile items, choosing box sizes to avoid dimensional-weight charges, low-cost branded touches, insert card ideas, eco-friendlier options, a packing station layout, and a per-order cost worksheet.",
+      "includes": [
+        "Protection and right-sizing rules",
+        "Low-cost branding and insert ideas",
+        "Packing station checklist and cost worksheet"
+      ],
+      "cover": "shop/covers/packaging-unboxing-guide.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "pricing-strategy-workbook",
+      "title": "Pricing Strategy Workbook",
+      "price": 8,
+      "category": "Pricing & profit",
+      "format": "Guide PDF",
+      "tagline": "Work out a price you can defend, with worked examples.",
+      "description": "A guided workbook on pricing handmade, print-on-demand and resale products: the full-cost formula, margin vs. markup, four pricing methods with worked examples, how fees and free shipping change the math, when to raise prices, and fill-in worksheets for your own products.",
+      "includes": [
+        "Full-cost formula and margin vs. markup",
+        "Four pricing methods with worked examples",
+        "Price-raise checklist and fill-in worksheet"
+      ],
+      "cover": "shop/covers/pricing-strategy-workbook.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "year-end-closeout-checklist",
+      "title": "Year-End Closeout Checklist",
+      "price": 5,
+      "category": "Money & taxes",
+      "format": "Printable PDF",
+      "tagline": "Close the books, count stock and get tax-ready.",
+      "description": "A printable year-end checklist for small online sellers: download platform reports and tax forms, reconcile payouts, finalize income and expenses, count inventory, organize receipts and mileage, review the year, and set up next year. Includes a document checklist to hand your tax preparer.",
+      "includes": [
+        "Records, reconciliation and inventory steps",
+        "Deduction gathering list and year review",
+        "Document checklist for your tax preparer"
+      ],
+      "cover": "shop/covers/year-end-closeout-checklist.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "daily-task-planner",
+      "title": "Daily Seller Task Planner",
+      "price": 4,
+      "category": "Planning & productivity",
+      "format": "Printable PDF",
+      "tagline": "One page a day: ship, make, market, admin.",
+      "description": "A printable, undated daily planner page for small shop owners, with a top-3 list, shipping checklist, make/market/admin columns, messages and notes, plus a weekly reset checklist. Print as many copies as you like.",
+      "includes": [
+        "5 undated daily pages (reprint as needed)",
+        "Shipping, make, market and admin sections",
+        "Weekly reset checklist"
+      ],
+      "cover": "shop/covers/daily-task-planner.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "product-description-workbook",
+      "title": "Product Description Formula Workbook",
+      "price": 6,
+      "category": "Listings & SEO",
+      "format": "Guide PDF",
+      "tagline": "A repeatable formula for descriptions that sell.",
+      "description": "A workbook with a five-part description formula, sensory and benefit word prompts, before-and-after examples, a list of the details buyers need for common product types, and fill-in pages to draft your own descriptions quickly and consistently.",
+      "includes": [
+        "Five-part description formula with examples",
+        "Benefit prompts, sensory word bank and details-by-product-type table",
+        "Fill-in drafting pages"
+      ],
+      "cover": "shop/covers/product-description-workbook.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "craft-fair-booth-checklist",
+      "title": "Craft Fair Booth & Packing Checklist",
+      "price": 4,
+      "category": "Sales & marketing",
+      "format": "Printable PDF",
+      "tagline": "Pack once, forget nothing, sell more at your table.",
+      "description": "A printable checklist for craft fairs, markets and pop-ups: booth structure, display, payments, inventory, comfort items and an emergency kit, plus booth layout tips, a day-of timeline and a post-event review page.",
+      "includes": [
+        "Booth, display, payment, inventory and comfort checklists",
+        "Layout tips and day-of timeline",
+        "Post-event review page"
+      ],
+      "cover": "shop/covers/craft-fair-booth-checklist.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "ideal-customer-worksheet",
+      "title": "Ideal Customer Worksheet",
+      "price": 4,
+      "category": "Sales & marketing",
+      "format": "Printable PDF",
+      "tagline": "Know exactly who you're making and marketing for.",
+      "description": "A short workbook that helps you define your ideal buyer from real evidence (reviews, messages, sales data), map why they buy and what stops them, and turn that into better photos, words and places to promote.",
+      "includes": [
+        "Evidence-gathering checklist",
+        "Customer profile and hesitation map",
+        "Action table for photos, words, prices and channels"
+      ],
+      "cover": "shop/covers/ideal-customer-worksheet.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "social-post-ideas",
+      "title": "40 Social Post Ideas for Small Shops",
+      "price": 5,
+      "category": "Sales & marketing",
+      "format": "Guide PDF",
+      "tagline": "Never stare at a blank caption again.",
+      "description": "Forty specific post and short-video ideas for makers and small online shops, each with a hook prompt and a format suggestion, plus a simple weekly posting rhythm and a caption formula. Works for TikTok, Instagram, Pinterest, Facebook and X.",
+      "includes": [
+        "40 post ideas with format and hook prompts",
+        "Weekly posting rhythm",
+        "Caption formula and ground rules"
+      ],
+      "cover": "shop/covers/social-post-ideas.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "customer-service-email-templates",
+      "title": "24 Customer Service Message Templates",
+      "price": 9,
+      "category": "Customer service",
+      "format": "Templates (DOCX)",
+      "tagline": "Calm, ready-to-send replies for every common situation.",
+      "description": "Twenty-four friendly, professional message templates for small online sellers, covering order confirmations, personalization checks, proofs, shipping updates, delays, lost and damaged packages, returns, refunds, cancellations, custom quotes, sizing questions, restocks, wholesale replies, unhappy reviews and holiday deadlines. Copy, fill in the brackets, and send.",
+      "includes": [
+        "24 templates for orders, shipping, problems, returns and custom work",
+        "Word (.docx) and plain-text Markdown (.md) versions"
+      ],
+      "cover": "shop/covers/customer-service-email-templates.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "returns-policy-template",
+      "title": "Returns & Exchanges Policy Template",
+      "price": 5,
+      "category": "Customer service",
+      "format": "Templates (DOCX)",
+      "tagline": "A clear, fair returns policy you can adapt in minutes.",
+      "description": "A fill-in-the-blanks returns and exchanges policy for small online shops, with three ready-made variations (returns accepted, exchanges only, no returns on custom items), a damaged-item section, refund timing and a short version for listings. Includes notes on keeping it consistent with marketplace rules.",
+      "includes": [
+        "Three policy versions (returns, exchanges only, custom final-sale)",
+        "Damaged, defective and lost-package sections",
+        "Short version for listings",
+        "Word (.docx) and plain-text Markdown (.md) versions"
+      ],
+      "cover": "shop/covers/returns-policy-template.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "shop-policies-pack",
+      "title": "Shop Policies Pack",
+      "price": 7,
+      "category": "Customer service",
+      "format": "Templates (DOCX)",
+      "tagline": "Shipping, processing, custom orders and FAQ, written for you.",
+      "description": "Fill-in-the-blanks shop policies for small online sellers: processing and shipping, international shipping, custom and personalized orders, payments and sales tax, a privacy note for off-platform email lists, and a 15-question FAQ. Plain language, ready to adapt.",
+      "includes": [
+        "Processing, shipping and international policies",
+        "Custom order, payment and privacy sections",
+        "15-question FAQ",
+        "Word (.docx) and plain-text Markdown (.md) versions"
+      ],
+      "cover": "shop/covers/shop-policies-pack.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "wholesale-pitch-templates",
+      "title": "Wholesale Pitch & Follow-Up Templates",
+      "price": 6,
+      "category": "Sales & marketing",
+      "format": "Templates (DOCX)",
+      "tagline": "Get your products into local shops and boutiques.",
+      "description": "Email templates and a simple process for pitching your products to boutiques and gift shops: research checklist, first pitch, follow-ups, sample offer, reply to interest, order confirmation, reorder nudge and a polite decline, plus a one-page brand intro outline.",
+      "includes": [
+        "Pre-pitch research checklist",
+        "8 pitch, follow-up and order emails",
+        "Brand intro outline",
+        "Word (.docx) and plain-text Markdown (.md) versions"
+      ],
+      "cover": "shop/covers/wholesale-pitch-templates.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "review-request-templates",
+      "title": "Review Request & Follow-Up Templates",
+      "price": 5,
+      "category": "Customer service",
+      "format": "Templates (DOCX)",
+      "tagline": "Ask for honest reviews the right way.",
+      "description": "Message templates for asking buyers for honest reviews without breaking marketplace rules: a delivery check-in, a gentle review ask, insert-card wording, a thank-you for positive reviews and replies to mixed and negative reviews. Includes do's and don'ts based on common platform rules.",
+      "includes": [
+        "Platform-friendly do's and don'ts",
+        "Delivery check-in and review ask",
+        "Insert card and replies to positive, mixed and negative reviews",
+        "Word (.docx) and plain-text Markdown (.md) versions"
+      ],
+      "cover": "shop/covers/review-request-templates.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "collab-outreach-templates",
+      "title": "Creator Collaboration Outreach Templates",
+      "price": 5,
+      "category": "Sales & marketing",
+      "format": "Templates (DOCX)",
+      "tagline": "Pitch creators, maker friends and gift guides professionally.",
+      "description": "Outreach templates for small shops working with content creators, other makers and gift-guide editors: a creator gifting pitch, a paid collaboration inquiry, a maker cross-promotion idea, a gift-guide submission, follow-ups and a simple collaboration agreement checklist, including disclosure reminders.",
+      "includes": [
+        "Creator gifting and paid collaboration pitches",
+        "Maker cross-promo and gift-guide submission",
+        "Follow-up and agreement checklist",
+        "Word (.docx) and plain-text Markdown (.md) versions"
+      ],
+      "cover": "shop/covers/collab-outreach-templates.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "seller-spreadsheet-mega-bundle",
+      "title": "Seller Spreadsheet Mega Bundle",
+      "price": 15,
+      "category": "Bundles",
+      "format": "Bundle (ZIP)",
+      "tagline": "Every Pocketed spreadsheet in one download.",
+      "description": "Every Pocketed spreadsheet in one download. Includes 22 products worth $133 if bought separately: Profit Per Item Calculator; Product Pricing Worksheet; Inventory Tracker with Reorder Alerts; Tax Set-Aside Planner; Shipping Cost Calculator; Business Mileage Log; Materials Cost & Recipe Calculator; Break-Even Calculator; Multichannel Sales Tracker; 12-Month Cash Flow Forecast; Wholesale Pricing Calculator & Line Sheet; Discount & Sale Impact Calculator; Ad Spend & ROAS Tracker; Custom Order Tracker; Supplier Comparison Sheet; Product Launch Tracker; Returns & Refunds Log; Craft Fair & Market Profit Tracker; Reseller Sourcing & Flip Log; Listing Keyword & Tag Planner; Social Media Content Calendar; Revenue Goal Tracker.",
+      "includes": [
+        "Profit Per Item Calculator",
+        "Product Pricing Worksheet",
+        "Inventory Tracker with Reorder Alerts",
+        "Tax Set-Aside Planner",
+        "Shipping Cost Calculator",
+        "Business Mileage Log",
+        "Materials Cost & Recipe Calculator",
+        "Break-Even Calculator",
+        "Multichannel Sales Tracker",
+        "12-Month Cash Flow Forecast",
+        "Wholesale Pricing Calculator & Line Sheet",
+        "Discount & Sale Impact Calculator",
+        "Ad Spend & ROAS Tracker",
+        "Custom Order Tracker",
+        "Supplier Comparison Sheet",
+        "Product Launch Tracker",
+        "Returns & Refunds Log",
+        "Craft Fair & Market Profit Tracker",
+        "Reseller Sourcing & Flip Log",
+        "Listing Keyword & Tag Planner",
+        "Social Media Content Calendar",
+        "Revenue Goal Tracker"
+      ],
+      "cover": "shop/covers/seller-spreadsheet-mega-bundle.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "new-shop-starter-bundle",
+      "title": "New Shop Starter Bundle",
+      "price": 15,
+      "category": "Bundles",
+      "format": "Bundle (ZIP)",
+      "tagline": "Launch checklist, pricing, listings, photos and policies.",
+      "description": "Launch checklist, pricing, listings, photos and policies. Includes 9 products worth $56 if bought separately: New Shop Launch Checklist; Product Pricing Worksheet; Profit Per Item Calculator; Listing SEO Checklist; Product Photo Shot List & Setup Guide; Product Description Formula Workbook; Shop Policies Pack; Returns & Exchanges Policy Template; 24 Customer Service Message Templates.",
+      "includes": [
+        "New Shop Launch Checklist",
+        "Product Pricing Worksheet",
+        "Profit Per Item Calculator",
+        "Listing SEO Checklist",
+        "Product Photo Shot List & Setup Guide",
+        "Product Description Formula Workbook",
+        "Shop Policies Pack",
+        "Returns & Exchanges Policy Template",
+        "24 Customer Service Message Templates"
+      ],
+      "cover": "shop/covers/new-shop-starter-bundle.jpg",
+      "checkout_url": ""
+    },
+    {
+      "slug": "money-and-tax-bundle",
+      "title": "Money & Tax Season Bundle",
+      "price": 12,
+      "category": "Bundles",
+      "format": "Bundle (ZIP)",
+      "tagline": "Books, taxes, mileage, cash flow and year-end in one kit.",
+      "description": "Books, taxes, mileage, cash flow and year-end in one kit. Includes 6 products worth $41 if bought separately: Bookkeeping Starter Kit; Tax Set-Aside Planner; Business Mileage Log; 12-Month Cash Flow Forecast; Break-Even Calculator; Year-End Closeout Checklist.",
+      "includes": [
+        "Bookkeeping Starter Kit",
+        "Tax Set-Aside Planner",
+        "Business Mileage Log",
+        "12-Month Cash Flow Forecast",
+        "Break-Even Calculator",
+        "Year-End Closeout Checklist"
+      ],
+      "cover": "shop/covers/money-and-tax-bundle.jpg",
+      "checkout_url": ""
+    }
+  ]
+}

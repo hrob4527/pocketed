@@ -336,6 +336,23 @@ atest("tampered or garbage storage does not unlock Pro", async () => {
   assert.strictEqual(License.isPro({ storage }), false);
 });
 
+// Shop catalog sanity checks.
+test("shop catalog is valid: unique slugs, prices, covers, checkout placeholders", () => {
+  const cat = JSON.parse(fs.readFileSync(path.join(__dirname, "shop", "catalog.json"), "utf8"));
+  const list = cat.products;
+  assert.ok(Array.isArray(list) && list.length >= 40, "expected 40+ products");
+  const slugs = new Set();
+  for (const p of list) {
+    assert.ok(p.slug && !slugs.has(p.slug), "duplicate or missing slug " + p.slug);
+    slugs.add(p.slug);
+    assert.ok(p.title && p.description && p.category && p.format, "missing text for " + p.slug);
+    assert.ok(p.price >= 3 && p.price <= 19, "price out of range for " + p.slug);
+    assert.ok(fs.existsSync(path.join(__dirname, p.cover)), "missing cover " + p.cover);
+    assert.ok("checkout_url" in p, "missing checkout_url field for " + p.slug);
+    assert.ok(p.checkout_url === "" || /^https:\/\/[a-z0-9-]+\.lemonsqueezy\.com\/(checkout\/)?buy\//.test(p.checkout_url), "bad checkout_url for " + p.slug);
+  }
+});
+
 (async () => {
   for (const [name, fn] of asyncTests) {
     await fn();
