@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pocketed — See what you actually keep from every sale</title>
+  <meta name="description" content="See what you actually keep from every sale. Pocketed itemizes Etsy, Stripe, and Gumroad fees, your costs, and a tax reserve — in your browser, with no upload." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2.5' y='2.5' width='27' height='27' rx='7' fill='%23fffaf2' stroke='%231c2418' stroke-width='1.7'/%3E%3Cpath d='M9 13.2 V21.2 C9 24.1 11.8 26.4 16 26.4 C20.2 26.4 23 24.1 23 21.2 V13.2' fill='none' stroke='%231c2418' stroke-width='1.55' stroke-linejoin='round'/%3E%3Cpath d='M9 13.2 C12.4 16.2 19.6 16.2 23 13.2' fill='none' stroke='%231c2418' stroke-width='1.55' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='19.2' r='2.35' fill='%23b5521f'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html">
+      <svg class="logo-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false">
+        <rect x="2.5" y="2.5" width="27" height="27" rx="7" fill="#fffaf2" stroke="#1c2418" stroke-width="1.7"/>
+        <path d="M9 13.2 V21.2 C9 24.1 11.8 26.4 16 26.4 C20.2 26.4 23 24.1 23 21.2 V13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linejoin="round"/>
+        <path d="M9 13.2 C12.4 16.2 19.6 16.2 23 13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linecap="round"/>
+        <circle cx="16" cy="19.2" r="2.35" fill="#b5521f"/>
+      </svg>
+      <span class="logo-word">Pocketed</span>
+    </a>
+    <nav class="nav">
+      <a class="hide-sm" href="#benefits">Benefits</a>
+      <a class="hide-sm" href="#pricing">Pricing</a>
+      <a class="hide-sm" href="#sources">Sources</a>
+      <a class="btn btn-ghost" href="app.html">Open the app</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">For Etsy, Stripe &amp; Gumroad sellers</p>
+          <h1>See what you actually keep from every sale.</h1>
+          <p class="lede">Itemize marketplace fees, subtract your costs, and set aside a tax reserve — then see the number that actually matters. Runs in your browser. Your payout files never leave this device.</p>
+          <div class="hero-actions">
+            <a class="btn btn-copper" href="app.html">Try the free calculator</a>
+            <a class="btn btn-ghost" href="#pricing">See pricing</a>
+          </div>
+          <p class="fine">No account required. This preview has every feature unlocked so you can test it before launch.</p>
+        </div>
+        <aside class="hero-card" aria-label="Before and after fees for a $50 Etsy sale">
+          <p class="label">Worked example · $50 Etsy sale, United States</p>
+          <div class="compare">
+            <div class="compare-col before">
+              <p class="compare-label">Listed at</p>
+              <p class="compare-amt">$50.00</p>
+              <p class="compare-sub">The sale price</p>
+            </div>
+            <div class="compare-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </div>
+            <div class="compare-col after">
+              <p class="compare-label">You pocket</p>
+              <p class="compare-amt">$20.86</p>
+              <p class="compare-sub">After fees, costs &amp; reserve</p>
+            </div>
+          </div>
+          <table class="ledger">
+            <tbody>
+              <tr class="mute"><td>Sale price</td><td>$50.00</td></tr>
+              <tr class="mute"><td>Listing fee</td><td>$0.20</td></tr>
+              <tr class="mute"><td>Transaction fee (6.5%)</td><td>$3.25</td></tr>
+              <tr class="mute"><td>Payment processing (3% + $0.25)</td><td>$1.75</td></tr>
+              <tr><td>You receive from Etsy</td><td>$44.80</td></tr>
+              <tr class="mute"><td>Cost of goods (example)</td><td>$15.00</td></tr>
+              <tr><td>Profit</td><td>$29.80</td></tr>
+              <tr class="mute"><td>Tax reserve you set (30%)</td><td>$8.94</td></tr>
+              <tr class="take"><td>Pocketed</td><td>$20.86</td></tr>
+            </tbody>
+          </table>
+          <p class="assumptions">Fees follow Etsy’s published U.S. rates for a $50 item with no shipping, no sales tax, and no Offsite Ads. Etsy’s cut of $5.20 is 10.4% of the sale. The $15 cost and 30% reserve are examples you can change. This is not tax advice.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="benefits" class="benefits-section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Built for the moment after a sale lands.</h2>
+          <p>A quiet tool for sellers who want the real number, not a prettier dashboard.</p>
+        </div>
+        <div class="benefits">
+          <article class="benefit">
+            <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="4" width="22" height="24" rx="3"/>
+              <path d="M10 12h12M10 17h12M10 22h7"/>
+            </svg>
+            <h3>Itemized, published fees</h3>
+            <p>Current Etsy (U.S.), Stripe, and Gumroad rates, broken out line by line — or a custom rate you type in.</p>
+          </article>
+          <article class="benefit">
+            <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="14" width="20" height="14" rx="2"/>
+              <path d="M10 14V10a6 6 0 0 1 12 0v4"/>
+            </svg>
+            <h3>Stays on this device</h3>
+            <p>Parsing and math run in your browser. Payout files are never uploaded to a server.</p>
+          </article>
+          <article class="benefit">
+            <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 8h14l6 6v14H6z"/>
+              <path d="M20 8v6h6M11 18h10M11 23h7"/>
+            </svg>
+            <h3>Listings or payout CSVs</h3>
+            <p>Price the next listing before you publish it, or drop last month’s statement and see what you kept.</p>
+          </article>
+          <article class="benefit">
+            <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="16" cy="16" r="11"/>
+              <path d="M16 10v12M12 13.5h5.5a2.5 2.5 0 0 1 0 5H13"/>
+            </svg>
+            <h3>A reserve you control</h3>
+            <p>Set aside a percentage of profit for taxes. You choose the rate. Pocketed does not file anything, and this is not tax advice.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Two jobs, one quiet tool.</h2>
+          <p>Price the next listing before you publish it. Then drop last month’s payout CSV and see what you actually kept.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <p class="num">01</p>
+            <h3>Price a listing</h3>
+            <p>Enter the price, shipping, costs, and an optional tax reserve. Pocketed applies current published fees for Etsy (U.S.), Stripe, or Gumroad direct sales — or a custom rate you type in.</p>
+          </article>
+          <article class="step">
+            <p class="num">02</p>
+            <h3>Or drop a payout CSV</h3>
+            <p>Export your payment account statement from Etsy, Stripe, or another platform. Columns are mapped automatically when the headers are recognizable. Sales, fees, refunds, and bank deposits are separated.</p>
+          </article>
+          <article class="step">
+            <p class="num">03</p>
+            <h3>Export or print</h3>
+            <p>Download a cleaned summary or print a one-page report. Nothing is uploaded to a server. Shop defaults can be saved in this browser only.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2>Fees are not a rounding error.</h2>
+          <p>Etsy charges a $0.20 listing fee, a 6.5% transaction fee on the item and the shipping you charge, and a U.S. payment-processing fee of 3% + $0.25 on the total including sales tax. Offsite Ads can add 15% or 12%, capped at $100 per order. Those are Etsy’s own figures, not ours.</p>
+          <p>Stripe’s standard U.S. domestic card rate is 2.9% + $0.30. Gumroad direct sales take 10% + $0.50 plus card processing of 2.9% + $0.30 (Discover marketplace sales are a flat 30%, including processing).</p>
+          <p class="note">Sellers already build spreadsheets for this because payout dashboards show gross more clearly than take-home. Pocketed is that spreadsheet, without the setup, and without sending financial files to somebody else’s server.</p>
+        </div>
+        <div>
+          <h2>Who it’s for</h2>
+          <ul>
+            <li>Etsy sellers who want the real margin on a listing before they publish it — including Offsite Ads and a tax set-aside.</li>
+            <li>Independent sellers and freelancers who get Stripe or Gumroad payout CSVs and want a monthly “what I kept” number.</li>
+            <li>Anyone who has been surprised by a payout that was much smaller than the sale price.</li>
+          </ul>
+          <p>A related one-page tool, Kept, is already sold on Gumroad as a $12 HTML file that reads a payout CSV and holds back a tax reserve. Pocketed adds official 2026 fee schedules, a listing-price calculator, a reverse “price to hit a target take-home” solver, and printable exports.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Simple pricing, paid once.</h2>
+          <p>Checkout is not connected in this preview. The suggested launch price is below, ready to wire to Lemon Squeezy or Gumroad.</p>
+        </div>
+        <div class="pricing">
+          <article class="price-card">
+            <h3>Free</h3>
+            <p class="amt">$0 <span>forever</span></p>
+            <ul>
+              <li>Price a listing on Etsy (U.S.), Stripe, Gumroad, or a custom fee</li>
+              <li>Itemized fees, costs, and a tax reserve you control</li>
+              <li>Works offline after the page has loaded</li>
+            </ul>
+            <a class="btn btn-ghost btn-wide" href="app.html">Open the calculator</a>
+          </article>
+          <article class="price-card featured">
+            <p class="price-badge">One-time</p>
+            <h3>Pocketed Pro</h3>
+            <p class="amt">$19 <span>once, yours to keep</span></p>
+            <ul>
+              <li>Everything in the free calculator</li>
+              <li>Drop unlimited payout CSVs (Etsy, Stripe, and generic statements)</li>
+              <li>Reverse-price a listing to hit a target take-home</li>
+              <li>Export a cleaned summary CSV and print a one-page report</li>
+              <li>Save shop defaults in this browser</li>
+            </ul>
+            <a class="btn btn-copper btn-wide" href="app.html#payout">Preview Pro in the app</a>
+          </article>
+        </div>
+        <p class="fine">Suggested payment: Lemon Squeezy or Gumroad (both can pay out to a linked bank account; Lemon Squeezy can handle sales tax / VAT collection on digital products). No subscription. Not affiliated with Etsy, Stripe, or Gumroad.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Questions</h2>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>Do you upload my payout files?</summary>
+            <p>No. Parsing happens in this browser. You can disconnect from the network after the page loads and the tool still works, including the sample files packaged with the app.</p>
+          </details>
+          <details>
+            <summary>Is this tax, legal, or accounting advice?</summary>
+            <p>No. The tax reserve is a percentage you choose so you can set money aside. Self-employed people in the United States often owe income tax and self-employment tax and may need to make quarterly estimated payments — confirm filings with a CPA or the IRS. Pocketed does not file anything and does not connect to your shop.</p>
+          </details>
+          <details>
+            <summary>Which fee rates do you use?</summary>
+            <p>Published rates as of 11 November 2026, cited on the Sources section and inside the app. Platforms change fees. If a rate looks stale, check the official page and use Custom fees, or ask for an update.</p>
+          </details>
+          <details>
+            <summary>What if my CSV looks different?</summary>
+            <p>If the usual headers are present (Amount, Fees, Net, Date, Type), mapping is automatic. If not, you can assign columns yourself. Bank-deposit rows are kept out of the sales total so a transfer isn’t counted as a loss.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Sources, not slogans.</h2>
+          <p>Every fee in the calculator is taken from a public official page, last checked 11 November 2026 (America/New_York). Demand evidence is also linked, not invented.</p>
+        </div>
+        <div class="sources">
+          <article class="source-card">
+            <strong>Etsy U.S. selling fees</strong>
+            $0.20 listing, 6.5% transaction, 3% + $0.25 processing, Offsite Ads 15% or 12% capped at $100. <a href="https://www.etsy.com/sell">etsy.com/sell</a> · <a href="https://help.etsy.com/hc/en-us/articles/115014483627-What-are-the-Fees-and-Taxes-for-Selling-on-Etsy">Fees &amp; taxes help</a> · <a href="https://help.etsy.com/hc/en-us/articles/115015628847-What-are-Payment-Processing-Fees-for-Selling-on-Etsy">Processing fees help</a>
+          </article>
+          <article class="source-card">
+            <strong>Stripe and Gumroad</strong>
+            Stripe standard U.S. domestic cards: 2.9% + $0.30. <a href="https://stripe.com/pricing">stripe.com/pricing</a>. Gumroad direct sales: 10% + $0.50 plus 2.9% + $0.30 card processing; Discover is 30% all-in. <a href="https://gumroad.com/help/article/66-gumroads-fees">Gumroad fee policy</a>
+          </article>
+          <article class="source-card">
+            <strong>People already pay for this job</strong>
+            Kept, a one-page payout-CSV tool with a tax reserve, is sold for $12 on Gumroad. <a href="https://foremandirt.gumroad.com/l/nxbyr">Kept on Gumroad</a>
+          </article>
+          <article class="source-card">
+            <strong>Sellers ask for the same breakdown</strong>
+            In r/EtsySellers, a seller shared a public fee-and-profit spreadsheet because people were “confused about Etsy fees” and “hidden” processing fees. <a href="https://www.reddit.com/r/EtsySellers/comments/tha4ma/etsy_fee_calculator/">Thread</a>. IRS pages on <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes">self-employment tax</a> and <a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes">estimated taxes</a> explain why a reserve setting exists at all.
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Pocketed · not affiliated with Etsy, Stripe, or Gumroad.</span>
+      <span>Not tax, legal, or accounting advice.</span>
+    </div>
+  </footer>
+</body>
+</html>

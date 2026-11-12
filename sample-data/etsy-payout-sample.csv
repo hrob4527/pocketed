@@ -1,0 +1,14 @@
+Date,Type,Title,Info,Currency,Amount,Fees & Taxes,Net
+2026-10-02,Sale,EXAMPLE — Linen tote bag,Order 1001,USD,48.00,-4.81,43.19
+2026-10-03,Sale,EXAMPLE — Ceramic mug,Order 1002,USD,36.00,-3.67,32.33
+2026-10-05,Listing,Listing fee,EXAMPLE — Ceramic mug,USD,0.00,-0.20,-0.20
+2026-10-07,Sale,EXAMPLE — Linen tote bag,Order 1003,USD,48.00,-4.81,43.19
+2026-10-08,Refund,EXAMPLE — Ceramic mug,Order 1002,USD,-36.00,3.67,-32.33
+2026-10-11,Sale,EXAMPLE — Oak serving board,Order 1004,USD,72.00,-7.09,64.91
+2026-10-12,Fee,Offsite Ads,Order 1004,USD,0.00,-10.80,-10.80
+2026-10-14,Sale,EXAMPLE — Linen tote bag,Order 1005,USD,54.00,-5.38,48.62
+2026-10-18,Sale,EXAMPLE — Greeting card set,Order 1006,USD,18.00,-1.96,16.04
+2026-10-21,Listing,Listing fee,EXAMPLE — Greeting card set,USD,0.00,-0.20,-0.20
+2026-10-24,Sale,EXAMPLE — Oak serving board,Order 1007,USD,72.00,-7.09,64.91
+2026-10-28,Deposit,Transfer to bank,EXAMPLE payout,USD,-230.00,0.00,-230.00
+2026-10-29,Sale,EXAMPLE — Linen tote bag,Order 1008,USD,48.00,-4.81,43.19

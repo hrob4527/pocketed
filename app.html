@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pocketed — calculator and payout reader</title>
+  <meta name="description" content="See what you actually keep from every sale. Price a listing or drop a payout CSV. All calculation stays in this browser." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2.5' y='2.5' width='27' height='27' rx='7' fill='%23fffaf2' stroke='%231c2418' stroke-width='1.7'/%3E%3Cpath d='M9 13.2 V21.2 C9 24.1 11.8 26.4 16 26.4 C20.2 26.4 23 24.1 23 21.2 V13.2' fill='none' stroke='%231c2418' stroke-width='1.55' stroke-linejoin='round'/%3E%3Cpath d='M9 13.2 C12.4 16.2 19.6 16.2 23 13.2' fill='none' stroke='%231c2418' stroke-width='1.55' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='19.2' r='2.35' fill='%23b5521f'/%3E%3C/svg%3E" />
+</head>
+<body class="app-body">
+  <header class="app-bar">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <svg class="logo-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false">
+          <rect x="2.5" y="2.5" width="27" height="27" rx="7" fill="#fffaf2" stroke="#1c2418" stroke-width="1.7"/>
+          <path d="M9 13.2 V21.2 C9 24.1 11.8 26.4 16 26.4 C20.2 26.4 23 24.1 23 21.2 V13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linejoin="round"/>
+          <path d="M9 13.2 C12.4 16.2 19.6 16.2 23 13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linecap="round"/>
+          <circle cx="16" cy="19.2" r="2.35" fill="#b5521f"/>
+        </svg>
+        <span class="logo-word">Pocketed</span>
+      </a>
+      <div class="modes" role="tablist" aria-label="Mode">
+        <button type="button" id="tab-listing" role="tab" aria-selected="true" aria-controls="mode-listing">Price a listing</button>
+        <button type="button" id="tab-payout" role="tab" aria-selected="false" aria-controls="mode-payout">Read a payout</button>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Landing</a>
+        <button type="button" class="btn btn-ghost" id="btn-sources" style="padding:8px 12px">Rates &amp; sources</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="app-main wrap">
+    <p class="fine" style="margin:0 0 16px">Preview build: Pro features are unlocked. Checkout is not connected yet. Nothing you enter is uploaded.</p>
+
+    <!-- Listing mode -->
+    <div id="mode-listing" class="app-grid" role="tabpanel">
+      <form class="panel" id="listing-form" autocomplete="off">
+        <div class="panel-head">
+          <h2>Price a listing</h2>
+          <button type="button" class="btn btn-ghost" id="btn-save-defaults" style="padding:8px 12px">Save defaults</button>
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="platform">Platform</label>
+            <select id="platform" name="platform">
+              <option value="etsyUS">Etsy — United States</option>
+              <option value="stripeUS">Stripe — U.S. domestic cards</option>
+              <option value="gumroadDirect">Gumroad — direct sales</option>
+              <option value="custom">Custom fee</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="quantity">Quantity</label>
+            <input id="quantity" name="quantity" type="number" min="1" step="1" value="1" />
+          </div>
+        </div>
+
+        <div class="row-3">
+          <div class="field">
+            <label for="itemPrice">Item price <span class="hint">per unit</span></label>
+            <div class="prefix"><span>$</span><input id="itemPrice" name="itemPrice" type="number" min="0" step="0.01" value="50" /></div>
+          </div>
+          <div class="field">
+            <label for="shippingCharged">Shipping you charge</label>
+            <div class="prefix"><span>$</span><input id="shippingCharged" name="shippingCharged" type="number" min="0" step="0.01" value="0" /></div>
+          </div>
+          <div class="field">
+            <label for="giftWrap">Gift wrap charged</label>
+            <div class="prefix"><span>$</span><input id="giftWrap" name="giftWrap" type="number" min="0" step="0.01" value="0" /></div>
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="salesTaxRate">Sales tax collected <span class="hint">percent of the order, e.g. 6 for 6%</span></label>
+            <input id="salesTaxRate" name="salesTaxRate" type="number" min="0" step="0.01" value="0" />
+          </div>
+          <div class="field">
+            <label for="taxReservePercent">Tax reserve <span class="hint">percent of profit you set aside. Not tax advice.</span></label>
+            <input id="taxReservePercent" name="taxReservePercent" type="number" min="0" max="99" step="1" value="30" />
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="cogs">Cost of goods <span class="hint">per unit</span></label>
+            <div class="prefix"><span>$</span><input id="cogs" name="cogs" type="number" min="0" step="0.01" value="15" /></div>
+          </div>
+          <div class="field">
+            <label for="shippingCost">Shipping you pay</label>
+            <div class="prefix"><span>$</span><input id="shippingCost" name="shippingCost" type="number" min="0" step="0.01" value="0" /></div>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <label for="packaging">Packaging</label>
+            <div class="prefix"><span>$</span><input id="packaging" name="packaging" type="number" min="0" step="0.01" value="0" /></div>
+          </div>
+          <div class="field">
+            <label for="labor">Labor / time</label>
+            <div class="prefix"><span>$</span><input id="labor" name="labor" type="number" min="0" step="0.01" value="0" /></div>
+          </div>
+        </div>
+
+        <div id="etsy-options" class="checks">
+          <label><input type="checkbox" id="includeListingFee" checked /> Allocate the $0.20 listing fee (and $0.20 per extra quantity sold)</label>
+          <div class="field" style="margin:0">
+            <label for="offsiteAds">Offsite Ads</label>
+            <select id="offsiteAds">
+              <option value="none">None on this order</option>
+              <option value="standard">Yes — 15% (under $10k trailing sales)</option>
+              <option value="discount">Yes — 12% ($10k+ trailing sales)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="custom-options" class="row-2 hidden">
+          <div class="field">
+            <label for="customRate">Custom fee percent <span class="hint">e.g. 2.9</span></label>
+            <input id="customRate" type="number" min="0" step="0.01" value="2.9" />
+          </div>
+          <div class="field">
+            <label for="customFixed">Custom fixed fee</label>
+            <div class="prefix"><span>$</span><input id="customFixed" type="number" min="0" step="0.01" value="0.30" /></div>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:8px">
+          <label for="targetTakehome">Reverse: price to hit a target pocketed amount</label>
+          <div class="row-2">
+            <div class="prefix"><span>$</span><input id="targetTakehome" type="number" min="0" step="0.01" placeholder="e.g. 25" /></div>
+            <button type="button" class="btn" id="btn-reverse">Solve for item price</button>
+          </div>
+          <span class="hint" id="reverse-status"></span>
+        </div>
+      </form>
+
+      <aside class="panel results" id="listing-results" aria-live="polite">
+        <p class="label" style="margin:0;font-size:0.8rem;color:var(--ink-soft)">Pocketed on this sale</p>
+        <p class="big" id="listing-takehome">$0.00</p>
+        <p class="caption" id="listing-caption">Fees, costs, and your reserve.</p>
+        <div class="kpi" id="listing-kpis"></div>
+        <table class="ledger" id="listing-ledger"></table>
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" id="btn-print-listing">Print report</button>
+          <button type="button" class="btn btn-ghost" id="btn-reset-listing">Reset example</button>
+        </div>
+        <p class="legal">Rates as of 11 November 2026 from official platform pages. Not tax, legal, or accounting advice. Confirm filings with a CPA or the IRS.</p>
+      </aside>
+    </div>
+
+    <!-- Payout mode -->
+    <div id="mode-payout" class="app-grid hidden" role="tabpanel">
+      <section class="panel">
+        <h2>Read a payout CSV</h2>
+        <p class="fine" style="margin-top:0">Drop an Etsy payment-account export, a Stripe payout report, or any CSV with Amount / Fees / Net columns. Sample files are invented example data.</p>
+        <div class="drop" id="drop-zone">
+          <strong>Drop a CSV here</strong>
+          <div>or choose a file from this device</div>
+          <input class="file-input" id="csv-file" type="file" accept=".csv,text/csv" />
+        </div>
+        <div class="actions" style="margin-top:0">
+          <button type="button" class="btn btn-ghost" id="btn-sample-etsy">Load Etsy sample</button>
+          <button type="button" class="btn btn-ghost" id="btn-sample-stripe">Load Stripe sample</button>
+        </div>
+        <div id="csv-warnings" class="warnings hidden"></div>
+        <div id="column-map" class="map-grid hidden"></div>
+        <div class="row-2">
+          <div class="field">
+            <label for="payoutCosts">Extra costs for this period <span class="hint">materials, ads, or other costs not in the file</span></label>
+            <div class="prefix"><span>$</span><input id="payoutCosts" type="number" min="0" step="0.01" value="0" /></div>
+          </div>
+          <div class="field">
+            <label for="payoutReserve">Tax reserve percent</label>
+            <input id="payoutReserve" type="number" min="0" max="99" step="1" value="30" />
+          </div>
+        </div>
+        <div class="table-wrap hidden" id="rows-wrap">
+          <table class="data" id="rows-table"></table>
+        </div>
+      </section>
+
+      <aside class="panel results" id="payout-results" aria-live="polite">
+        <p class="label" style="margin:0;font-size:0.8rem;color:var(--ink-soft)">Pocketed for this file</p>
+        <p class="big" id="payout-takehome">—</p>
+        <p class="caption" id="payout-caption">Drop a file or load a sample to see totals. Bank deposits are listed separately and are not treated as expenses.</p>
+        <div class="kpi" id="payout-kpis"></div>
+        <table class="ledger" id="payout-ledger"></table>
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" id="btn-export-csv" disabled>Export summary CSV</button>
+          <button type="button" class="btn btn-ghost" id="btn-print-payout" disabled>Print report</button>
+        </div>
+        <p class="legal">Your file stays in this browser. Figures depend on the columns in the export. Not tax, legal, or accounting advice.</p>
+      </aside>
+    </div>
+  </main>
+
+  <dialog id="sources-dialog" style="max-width:36rem;border:1px solid var(--line);border-radius:6px;padding:0;background:var(--card);color:var(--ink)">
+    <div style="padding:20px 22px">
+      <h2 style="margin:0 0 10px;font-family:var(--serif)">Rates &amp; sources</h2>
+      <p style="margin:0 0 12px;color:var(--ink-soft);font-size:0.95rem">Last checked 11 November 2026. Open the official page if you need to confirm a change.</p>
+      <ul id="sources-list" style="padding-left:1.1rem;margin:0 0 16px"></ul>
+      <button type="button" class="btn" id="btn-close-sources">Close</button>
+    </div>
+  </dialog>
+
+  <script src="fees.js"></script>
+  <script src="csv.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+Created,Reporting Category,Description,Currency,Amount,Fee,Net
+2026-10-03,charge,EXAMPLE — Invoice 2041,USD,250.00,7.55,242.45
+2026-10-06,charge,EXAMPLE — Invoice 2042,USD,180.00,5.52,174.48
+2026-10-09,refund,EXAMPLE — Invoice 2041 partial refund,USD,-40.00,0.00,-40.00
+2026-10-14,charge,EXAMPLE — Invoice 2043,USD,95.00,3.06,91.94
+2026-10-20,charge,EXAMPLE — Invoice 2044,USD,320.00,9.58,310.42
+2026-10-27,payout,EXAMPLE — Stripe payout to bank,USD,-779.29,0.00,-779.29
