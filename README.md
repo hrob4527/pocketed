@@ -4,7 +4,7 @@ See what you actually keep from every sale.
 
 A small browser app that shows online sellers what they actually keep after marketplace fees, their own costs, and a tax reserve they choose.
 
-This is a first version meant to be launched as a $19 one-time product (free listing calculator; paid payout-CSV reader, reverse pricing, and exports). Checkout is not wired yet. No accounts were created for this build.
+This is a first version meant to be launched as a $19 one-time product (free listing calculator; paid payout-CSV reader, reverse pricing, and exports). Buy Pro checkout is live at [Lemon Squeezy](https://pcketedapp.lemonsqueezy.com/checkout/buy/44e338e5-789f-4146-938b-cc03b61c46f0). Pro features are not gated in this build — they are unlocked for everyone.
 
 ## Run it locally
 
