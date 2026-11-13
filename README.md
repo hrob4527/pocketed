@@ -42,7 +42,7 @@ node test.js
 
 ## What’s in the box
 
-- `index.html` — landing page with pricing copy and cited sources
+- `index.html` — bright storefront home: fee calculator pitch, shop search, category chips, most-wanted products, pricing and cited sources
 - `app.html` — the working app
 - `styles.css`, `fees.js`, `csv.js`, `license.js`, `app.js`
 - `sample-data/` — invented example Etsy and Stripe payout CSVs (rows are labeled EXAMPLE)
@@ -53,4 +53,4 @@ Not tax, legal, or accounting advice. Not affiliated with Etsy, Stripe, or Gumro
 
 ## Shop
 
-`shop.html` lists the digital products in `shop/catalog.json` (covers in `shop/covers/`). Each product has a `checkout_url` field; paste its Lemon Squeezy checkout link there and the card shows a Buy button (lemon.js overlay). An empty `checkout_url` shows "Coming soon".
+`shop.html` is the storefront catalog (`shop/catalog.json`, covers in `shop/covers/`). Search, category chips (Spreadsheets, Printables/PDFs, Templates, Bundles), price filters and a research-based Most wanted row are all client-side. Each product has a `checkout_url`; a Lemon Squeezy link shows a Buy button (lemon.js overlay). An empty `checkout_url` shows "Coming soon".

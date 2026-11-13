@@ -353,6 +353,71 @@ test("shop catalog is valid: unique slugs, prices, covers, checkout placeholders
   }
 });
 
+// Storefront redesign checks.
+test("all 45 shop products have live Lemon Squeezy checkout URLs", () => {
+  const cat = JSON.parse(fs.readFileSync(path.join(__dirname, "shop", "catalog.json"), "utf8"));
+  const list = cat.products;
+  assert.strictEqual(list.length, 45, "expected 45 products, got " + list.length);
+  for (const p of list) {
+    assert.ok(
+      /^https:\/\/pcketedapp\.lemonsqueezy\.com\/checkout\/buy\/[a-z0-9-]+/i.test(p.checkout_url),
+      "missing live checkout for " + p.slug
+    );
+  }
+});
+
+test("most-wanted featured slugs exist in the catalog and kinds cover every product", () => {
+  const js = fs.readFileSync(path.join(__dirname, "shop.js"), "utf8");
+  const match = js.match(/var FEATURED = \[([^\]]+)\]/);
+  assert.ok(match, "FEATURED list missing from shop.js");
+  const slugs = match[1].split(",").map((s) => s.replace(/['"\s]/g, "")).filter(Boolean);
+  assert.ok(slugs.length >= 6 && slugs.length <= 10, "expected 6-10 featured products");
+  const cat = JSON.parse(fs.readFileSync(path.join(__dirname, "shop", "catalog.json"), "utf8"));
+  const bySlug = new Map(cat.products.map((p) => [p.slug, p]));
+  for (const slug of slugs) {
+    assert.ok(bySlug.has(slug), "featured slug missing from catalog: " + slug);
+  }
+  function kindOf(p) {
+    if (p.category === "Bundles" || (p.format && p.format.indexOf("Bundle") === 0)) return "Bundles";
+    if (p.format && p.format.indexOf("Spreadsheet") === 0) return "Spreadsheets";
+    if (p.format && p.format.indexOf("PDF") !== -1) return "Printables/PDFs";
+    if (p.format && p.format.indexOf("Templates") === 0) return "Templates";
+    return "Other";
+  }
+  const kinds = new Set();
+  for (const p of cat.products) {
+    const k = kindOf(p);
+    assert.notStrictEqual(k, "Other", "unmapped format for " + p.slug + ": " + p.format);
+    kinds.add(k);
+  }
+  for (const need of ["Spreadsheets", "Printables/PDFs", "Templates", "Bundles"]) {
+    assert.ok(kinds.has(need), "missing kind " + need);
+  }
+});
+
+test("storefront pages are light-themed, searchable, and keep Lemon Squeezy checkout", () => {
+  const css = fs.readFileSync(path.join(__dirname, "styles.css"), "utf8");
+  assert.doesNotMatch(css, /prefers-color-scheme\s*:\s*dark/);
+  assert.match(css, /--paper:\s*#(fff|fffff|fffdf8|fffaf2|ffffff)/i);
+  for (const name of ["index.html", "shop.html"]) {
+    const html = fs.readFileSync(path.join(__dirname, name), "utf8");
+    assert.match(html, /app\.lemonsqueezy\.com\/js\/lemon\.js/);
+    assert.match(html, /property="og:title"/);
+    assert.match(html, /property="og:description"/);
+    assert.match(html, /property="og:image"/);
+    assert.match(html, /Merch coming soon/);
+    assert.match(html, /Instant download/);
+    assert.match(html, /Secure checkout by Lemon Squeezy/);
+    assert.match(html, /Spreadsheets/);
+    assert.match(html, /Printables\/PDFs/);
+    assert.match(html, /Free calculator/);
+    assert.doesNotMatch(html, /bestseller|star rating|★★|testimonials?/i);
+  }
+  const shopJs = fs.readFileSync(path.join(__dirname, "shop.js"), "utf8");
+  assert.match(shopJs, /lemonsqueezy-button/);
+  assert.match(shopJs, /createLemonSqueezy/);
+});
+
 (async () => {
   for (const [name, fn] of asyncTests) {
     await fn();
