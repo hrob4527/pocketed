@@ -38,6 +38,7 @@ h2 { font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
 h3 { font-size: 1.1rem; }
 p { margin: 0 0 1em; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
+[hidden] { display: none !important; }
 .vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .skip { position: absolute; left: 12px; top: -60px; background: var(--ink); color: #fff; padding: 10px 14px; border-radius: 8px; z-index: 100; }
 .skip:focus { top: 12px; color: #fff; }
@@ -375,3 +376,4 @@ main { display: block; }
 @media (max-width: 640px) { .toast { width: calc(100vw - 24px); } }
 .panel h2 { flex-wrap: wrap; }
 @media (max-width: 759px) { .utility p { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: .8rem; } }
+@media (min-width: 1000px) { .tiles.tiles-4 { grid-template-columns: repeat(4, 1fr); } .tiles-4 .tile-img { aspect-ratio: 16 / 9; } }

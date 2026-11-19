@@ -473,7 +473,7 @@ deals_body = f'''{crumbs("", [("Home", "index.html"), ("Deals", "#")])}
     <a class="btn btn-primary" href="#notify">Get a launch email</a></section>
 </div>
 <section class="section" aria-labelledby="dc-h"><div class="wrap"><div class="sec-head"><div><h2 id="dc-h">Categories we’re preparing</h2><p>No prices yet. Tap a category to ask for a heads-up.</p></div></div>
-  <div class="tiles">{dt}</div></div></section>
+  <div class="tiles tiles-4">{dt}</div></div></section>
 <section class="section" id="notify" aria-labelledby="nt-h"><div class="wrap"><div class="panel" style="max-width:760px">
   <h2 id="nt-h">Tell me when Deals opens</h2>
   <p>We don’t run a mailing list server, so this opens a short email to us from your own email app. We’ll write back once when Deals launches, and that’s it.</p>
