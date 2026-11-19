@@ -1,391 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-root="">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pocketed — Etsy fee calculator and seller tools, templates and trackers</title>
-  <meta name="description" content="See what you actually keep after Etsy, Stripe and Gumroad fees. Then shop bookkeeping templates, inventory trackers, pricing spreadsheets and printables for online sellers. Instant download." />
+  <title>Pocketed – Seller tools, templates &amp; merch</title>
+  <meta name="description" content="Shop spreadsheets, printables and templates for online sellers, plus original seller merch printed to order. Free take-home pay calculator included." />
   <link rel="canonical" href="https://hrob4527.github.io/pocketed/" />
+  <meta name="theme-color" content="#fffdf8" />
+  <meta name="color-scheme" content="light" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Pocketed" />
-  <meta property="og:title" content="Pocketed — Etsy fee calculator and seller tools, templates and trackers" />
-  <meta property="og:description" content="See what you actually keep after Etsy, Stripe and Gumroad fees. Then shop bookkeeping templates, inventory trackers, pricing spreadsheets and printables for online sellers. Instant download." />
+  <meta property="og:title" content="Pocketed – Seller tools, templates &amp; merch" />
+  <meta property="og:description" content="Shop spreadsheets, printables and templates for online sellers, plus original seller merch printed to order. Free take-home pay calculator included." />
   <meta property="og:url" content="https://hrob4527.github.io/pocketed/" />
   <meta property="og:image" content="https://hrob4527.github.io/pocketed/og.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Pocketed — Etsy fee calculator and seller tools" />
-  <meta name="twitter:description" content="See what you actually keep after marketplace fees. Free calculator plus instant-download seller tools." />
-  <meta name="twitter:image" content="https://hrob4527.github.io/pocketed/og.png" />
-  <meta name="theme-color" content="#fffdf8" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2.5' y='2.5' width='27' height='27' rx='7' fill='%23fff6ea' stroke='%231c2418' stroke-width='1.7'/%3E%3Cpath d='M9 13.2 V21.2 C9 24.1 11.8 26.4 16 26.4 C20.2 26.4 23 24.1 23 21.2 V13.2' fill='none' stroke='%231c2418' stroke-width='1.55' stroke-linejoin='round'/%3E%3Cpath d='M9 13.2 C12.4 16.2 19.6 16.2 23 13.2' fill='none' stroke='%231c2418' stroke-width='1.55' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='19.2' r='2.35' fill='%23c2410c'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2.5' y='2.5' width='27' height='27' rx='7' fill='%23fffaf2' stroke='%231c2418' stroke-width='1.7'/%3E%3Cpath d='M9 13.2 V21.2 C9 24.1 11.8 26.4 16 26.4 C20.2 26.4 23 24.1 23 21.2 V13.2' fill='none' stroke='%231c2418' stroke-width='1.55' stroke-linejoin='round'/%3E%3Cpath d='M9 13.2 C12.4 16.2 19.6 16.2 23 13.2' fill='none' stroke='%231c2418' stroke-width='1.55' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='19.2' r='2.35' fill='%23e24a1a'/%3E%3C/svg%3E" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://hrob4527.github.io/pocketed/#org",
-        "name": "Pocketed",
-        "url": "https://hrob4527.github.io/pocketed/"
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://hrob4527.github.io/pocketed/#website",
-        "name": "Pocketed",
-        "url": "https://hrob4527.github.io/pocketed/",
-        "publisher": { "@id": "https://hrob4527.github.io/pocketed/#org" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://hrob4527.github.io/pocketed/shop.html?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    ]
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="store.css" />
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Pocketed", "url": "https://hrob4527.github.io/pocketed/", "email": "tfcn899d@mail.grokbot.com", "logo": "https://hrob4527.github.io/pocketed/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Pocketed", "url": "https://hrob4527.github.io/pocketed/", "potentialAction": {"@type": "SearchAction", "target": "https://hrob4527.github.io/pocketed/shop.html?q={search_term_string}", "query-input": "required name=search_term_string"}}</script>
 </head>
-<body class="storefront">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="index.html">
-        <svg class="logo-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false">
-          <rect x="2.5" y="2.5" width="27" height="27" rx="7" fill="#fffaf2" stroke="#1c2418" stroke-width="1.7"/>
-          <path d="M9 13.2 V21.2 C9 24.1 11.8 26.4 16 26.4 C20.2 26.4 23 24.1 23 21.2 V13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linejoin="round"/>
-          <path d="M9 13.2 C12.4 16.2 19.6 16.2 23 13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linecap="round"/>
-          <circle cx="16" cy="19.2" r="2.35" fill="#e24a1a"/>
-        </svg>
-        <span class="logo-word">Pocketed</span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="shop.html">Shop</a>
-        <a class="hide-sm" href="app.html">Calculator</a>
-        <a class="hide-sm" href="#pricing">Pricing</a>
-        <a class="btn btn-copper lemonsqueezy-button" href="https://pcketedapp.lemonsqueezy.com/checkout/buy/44e338e5-789f-4146-938b-cc03b61c46f0">Buy Pro</a>
-        <a class="btn btn-ghost" href="app.html">Open the app</a>
-      </nav>
+<body data-page="home" >
+<a class="skip" href="#main">Skip to content</a>
+<div class="utility"><div class="wrap"><p>Digital files by email right after checkout · Merch printed to order and shipped by Printify</p>
+<nav aria-label="Help links"><a href="help.html">Help</a><a href="shipping.html">Shipping</a><a href="returns.html">Returns</a><a href="app.html">Free calculator</a></nav></div></div>
+<header class="hdr">
+  <div class="wrap hdr-row">
+    <a class="brand" href="index.html" aria-label="Pocketed home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2.5" y="2.5" width="27" height="27" rx="7" fill="#fff6ea" stroke="#1c2418" stroke-width="1.7"/><path d="M9 13.2 V21.2 C9 24.1 11.8 26.4 16 26.4 C20.2 26.4 23 24.1 23 21.2 V13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linejoin="round"/><path d="M9 13.2 C12.4 16.2 19.6 16.2 23 13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linecap="round"/><circle cx="16" cy="19.2" r="2.35" fill="#c2410c"/></svg><span>Pocketed</span></a>
+    <button id="dept-btn" class="dept-btn" type="button" aria-expanded="false" aria-controls="mega"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg> All departments</button>
+    <form id="search-form" class="search" action="shop.html" method="get" role="search">
+      <label class="vh" for="q">Search Pocketed</label>
+      <input id="q" name="q" type="search" placeholder="Search tees, mugs, tax planners, spreadsheets…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="suggest" aria-autocomplete="list" />
+      <button type="submit" aria-label="Search"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+      <ul id="suggest" class="suggest" role="listbox" aria-label="Search suggestions" hidden></ul>
+    </form>
+    <div class="hdr-links">
+      <a class="hdr-link" href="bag.html#saved" data-saved-label aria-label="Saved list"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span>Saved</span><b class="count" data-saved-count data-zero>0</b></a>
+      <a class="hdr-link" href="bag.html" data-bag-label aria-label="Bag"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Bag</span><b class="count" data-bag-count data-zero>0</b></a>
     </div>
-  </header>
+  </div>
+  <nav class="wrap quick" aria-label="Popular departments">
+    <a href="digital.html">All digital tools</a><a href="merch.html">All merch</a>
+    <a href="merch.html?c=Tees">Tees</a><a href="merch.html?c=Mugs">Mugs</a>
+    <a href="digital.html?k=Spreadsheets">Spreadsheets</a><a href="digital.html?k=Bundles">Bundles</a>
+    <a href="digital.html?c=Money+%26+taxes">Money &amp; taxes</a><a href="shop.html?price=u6">Under $6</a>
+    <a href="app.html">Free calculator</a><a class="soon" href="deals.html">Deals</a>
+  </nav>
+  <div id="mega" class="mega" hidden>
+  <div class="mega-close"><button class="btn btn-outline btn-sm" type="button" data-close-mega><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg> Close menu</button></div>
+  <div class="wrap mega-inner">
+    <div><h2><a href="digital.html">Digital tools &amp; templates</a></h2>
+      <p class="sub">By job</p><ul><li><a href="digital.html?c=Pricing+%26+profit">Pricing &amp; profit</a></li><li><a href="digital.html?c=Inventory+%26+operations">Inventory &amp; operations</a></li><li><a href="digital.html?c=Money+%26+taxes">Money &amp; taxes</a></li><li><a href="digital.html?c=Shipping+%26+fulfillment">Shipping &amp; fulfillment</a></li><li><a href="digital.html?c=Sales+%26+marketing">Sales &amp; marketing</a></li><li><a href="digital.html?c=Planning+%26+productivity">Planning &amp; productivity</a></li><li><a href="digital.html?c=Customer+service">Customer service</a></li><li><a href="digital.html?c=Listings+%26+SEO">Listings &amp; SEO</a></li><li><a href="digital.html?c=Bundles">Bundles</a></li></ul>
+      <p class="sub">By file type</p><ul><li><a href="digital.html?k=Spreadsheets">Spreadsheets</a></li><li><a href="digital.html?k=Printables%2FPDFs">Printables/PDFs</a></li><li><a href="digital.html?k=Templates">Templates</a></li><li><a href="digital.html?k=Bundles">Bundles</a></li></ul>
+      <a class="see-all" href="digital.html">See all 45 digital tools</a></div>
+    <div><h2><a href="merch.html">Merch</a> <span class="pill">New</span></h2>
+      <ul><li><a href="merch.html?c=Tees">Tees</a></li><li><a href="merch.html?c=Mugs">Mugs</a></li><li><a href="merch.html?c=Stickers">Stickers</a></li><li><a href="merch.html?c=Bags">Bags</a></li><li><a href="merch.html?c=Journals">Journals</a></li></ul><a class="see-all" href="merch.html">See all merch</a>
+      <p class="sub">Printed to order by Printify</p></div>
+    <div><h2><a href="deals.html">Deals</a> <span class="pill">Launching soon</span></h2><ul><li><a href="deals.html#fashion-lounge">Fashion &amp; Lounge</a></li><li><a href="deals.html#home-cozy">Home &amp; Cozy</a></li><li><a href="deals.html#pets">Pets</a></li><li><a href="deals.html#kitchen-gifts">Kitchen &amp; Gifts</a></li><li><a href="deals.html#kids-toys">Kids &amp; Toys</a></li><li><a href="deals.html#beauty">Beauty</a></li><li><a href="deals.html#desk-side-hustle">Desk &amp; Side Hustle</a></li><li><a href="deals.html#jewelry-accessories">Jewelry &amp; Accessories</a></li></ul></div>
+    <div><h2>Free tools</h2><ul>
+      <li><a href="app.html">Take-home pay calculator</a></li>
+      <li><a href="pro.html">Pocketed Pro ($19 once)</a></li></ul>
+      <p class="sub">Help</p><ul>
+      <li><a href="help.html">Help center</a></li><li><a href="shipping.html">Shipping &amp; delivery</a></li>
+      <li><a href="returns.html">Returns &amp; refunds</a></li><li><a href="contact.html">Contact us</a></li></ul></div>
+  </div>
+</div>
+</header>
+<main id="main" tabindex="-1">
 
-  <main id="main">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="eyebrow">For Etsy, eBay, Shopify, Stripe &amp; Gumroad sellers</p>
-          <h1>See what you actually keep from every sale.</h1>
-          <p class="lede">Itemize marketplace fees, then shop the spreadsheets, printables and templates that help you run the rest — bookkeeping, inventory, pricing and tax set-aside. The free calculator runs in your browser. Your payout files never leave this device.</p>
-          <form class="hero-search" action="shop.html" method="get" role="search">
-            <label for="home-search" class="visually-hidden">Search seller tools</label>
-            <input id="home-search" type="search" name="q" placeholder="Search inventory, taxes, pricing…" autocomplete="off" />
-            <button class="btn btn-copper" type="submit">Search</button>
-          </form>
-          <nav class="kind-nav" aria-label="Shop categories">
-            <a class="chip" href="shop.html?kind=Spreadsheets">Spreadsheets</a>
-            <a class="chip" href="shop.html?kind=Printables/PDFs">Printables/PDFs</a>
-            <a class="chip" href="shop.html?kind=Templates">Templates</a>
-            <a class="chip" href="shop.html?kind=Bundles">Bundles</a>
-            <a class="chip chip-link" href="app.html">Free calculator</a>
-          </nav>
-          <div class="hero-actions">
-            <a class="btn btn-copper" href="app.html">Try the free calculator</a>
-            <a class="btn btn-ghost" href="shop.html">Browse the shop</a>
-          </div>
-          <p class="fine">No account required. The calculator is free; Pro is a one-time $19 purchase that unlocks with the license key emailed to you. Shop products are instant digital downloads.</p>
-        </div>
-        <aside class="hero-card" aria-label="Before and after fees for a $50 Etsy sale">
-          <p class="label">Worked example · $50 Etsy sale, United States</p>
-          <div class="compare">
-            <div class="compare-col before">
-              <p class="compare-label">Listed at</p>
-              <p class="compare-amt">$50.00</p>
-              <p class="compare-sub">The sale price</p>
-            </div>
-            <div class="compare-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 12h14M13 6l6 6-6 6"/>
-              </svg>
-            </div>
-            <div class="compare-col after">
-              <p class="compare-label">You pocket</p>
-              <p class="compare-amt">$20.86</p>
-              <p class="compare-sub">After fees, costs &amp; reserve</p>
-            </div>
-          </div>
-          <table class="ledger">
-            <tbody>
-              <tr class="mute"><td>Sale price</td><td>$50.00</td></tr>
-              <tr class="mute"><td>Listing fee</td><td>$0.20</td></tr>
-              <tr class="mute"><td>Transaction fee (6.5%)</td><td>$3.25</td></tr>
-              <tr class="mute"><td>Payment processing (3% + $0.25)</td><td>$1.75</td></tr>
-              <tr><td>You receive from Etsy</td><td>$44.80</td></tr>
-              <tr class="mute"><td>Cost of goods (example)</td><td>$15.00</td></tr>
-              <tr><td>Profit</td><td>$29.80</td></tr>
-              <tr class="mute"><td>Tax reserve you set (30%)</td><td>$8.94</td></tr>
-              <tr class="take"><td>Pocketed</td><td>$20.86</td></tr>
-            </tbody>
-          </table>
-          <p class="assumptions">Fees follow Etsy’s published U.S. rates for a $50 item with no shipping, no sales tax, and no Offsite Ads. Etsy’s cut of $5.20 is 10.4% of the sale. The $15 cost and 30% reserve are examples you can change. This is not tax advice.</p>
-        </aside>
-      </div>
-    </section>
+<h1 class="vh">Pocketed: tools, templates and merch for online sellers</h1>
+<section class="hero"><div class="wrap hero-grid">
+  <a class="banner hero-main" href="merch.html">
+    <div class="banner-copy"><p class="eyebrow">New in the shop</p>
+      <h2 style="font-size:clamp(1.7rem,3.6vw,2.6rem)">Merch for the packing-table crew</h2>
+      <p>Original seller tees, mugs, stickers, a tote and a journal. Printed when you order, shipped by Printify. Tees from $24, sizes S–2XL.</p>
+      <span class="btn btn-primary">Shop all merch</span></div>
+    <div class="art"><img src="img/merch/tee-pocketed-it-2.webp" alt="" width="380" height="380"><img src="img/merch/mug-lunch-money-2.webp" alt="" width="200" height="200"></div>
+  </a>
+  <a class="banner banner-mint banner-sm" href="digital.html">
+    <div class="banner-copy"><h2>45 digital tools from $4</h2><p>Spreadsheets, printables and templates for pricing, inventory and taxes. Emailed right after checkout.</p><span class="textlink">Shop digital tools</span></div>
+    <img class="side-img" src="shop/covers/profit-per-item-calculator.jpg" alt="" width="120" height="90" loading="lazy">
+  </a>
+  <a class="banner banner-sky banner-sm" href="app.html">
+    <div class="banner-copy"><h2>Free take-home pay calculator</h2><p>See what you keep after Etsy, Stripe or Gumroad fees. Runs in your browser, no sign-up.</p><span class="textlink">Open the calculator</span></div>
+  </a>
+</div>
+<div class="wrap"><div class="props">
+  <div class="prop"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><div><strong>Instant download</strong>Digital files arrive by email after checkout.</div></div>
+  <div class="prop"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><div><strong>Secure checkout by Lemon Squeezy</strong>For every digital product, sales tax included.</div></div>
+  <div class="prop"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg><div><strong>Printed to order</strong>Merch is made and shipped by Printify.</div></div>
+  <div class="prop"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14l-5-5 5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg><div><strong>Clear returns</strong>Misprints and damage are reprinted or refunded. <a href="returns.html">Policy</a></div></div>
+</div></div></section>
 
-    <section class="trust-section" aria-label="Why buy from Pocketed">
-      <div class="wrap trust-bar">
-        <p><strong>Instant download</strong> Digital files are delivered after checkout.</p>
-        <p><strong>Secure checkout by Lemon Squeezy</strong> Payments, sales tax and VAT are handled for you.</p>
-        <p><strong>Free calculator in your browser</strong> Payout files are never uploaded to a server.</p>
-      </div>
-    </section>
+<section class="section" aria-labelledby="cat-h"><div class="wrap">
+  <div class="sec-head"><div><h2 id="cat-h">Shop by category</h2></div><a href="shop.html">See all 55 products</a></div>
+  <div class="tiles"><a class="tile" href="merch.html?c=Tees"><span class="tile-img bg-peach"><img src="img/merch/tee-thrift-flip-repeat-2.webp" alt="" width="300" height="300" loading="lazy"></span>Tees<small>From $24</small></a><a class="tile" href="merch.html?c=Mugs"><span class="tile-img bg-sky"><img src="img/merch/mug-ship-day-fuel-2.webp" alt="" width="300" height="300" loading="lazy"></span>Mugs<small>11 oz ceramic</small></a><a class="tile" href="merch.html?c=Stickers"><span class="tile-img bg-butter"><img src="img/merch/sticker-bubble-wrap-2.webp" alt="" width="300" height="300" loading="lazy"></span>Stickers<small>$4.99</small></a><a class="tile" href="digital.html?k=Spreadsheets"><span class="tile-img bg-mint fit"><img src="shop/covers/inventory-tracker.jpg" alt="" width="300" height="300" loading="lazy"></span>Spreadsheets<small>Excel &amp; Google Sheets</small></a><a class="tile" href="digital.html?c=Money+%26+taxes"><span class="tile-img bg-cream fit"><img src="shop/covers/tax-set-aside-planner.jpg" alt="" width="300" height="300" loading="lazy"></span>Money &amp; taxes<small>Planners &amp; trackers</small></a><a class="tile" href="digital.html?k=Bundles"><span class="tile-img bg-lilac fit"><img src="shop/covers/seller-spreadsheet-mega-bundle.jpg" alt="" width="300" height="300" loading="lazy"></span>Bundles<small>Save on sets</small></a></div></div></section>
 
-    <section id="most-wanted" class="wanted-section">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">What sellers are looking for</p>
-          <h2>Most wanted</h2>
-          <p>Fee and profit math, bookkeeping, inventory, tax set-aside and bundles — the jobs sellers are already buying tools to do. These are existing Pocketed products matched to that demand, not a sales ranking.</p>
-        </div>
-        <div id="featured-grid" class="featured-row shop-grid" aria-label="Most wanted products"></div>
-        <p class="section-cta"><a class="btn btn-ghost" href="shop.html">Browse all 45 products</a></p>
-      </div>
-    </section>
+<section class="section" id="featured" aria-labelledby="featured-h"><div class="wrap">
+  <div class="sec-head"><div><h2 id="featured-h">Seller essentials</h2><p>Fee math, bookkeeping, inventory and tax set-aside: the jobs sellers search for most. Picked by us, not a sales ranking.</p></div><a href="digital.html">See all digital tools</a></div>
+  <div class="row" id="row-featured"></div></div></section>
+<section class="section" id="merch" aria-labelledby="merch-h"><div class="wrap">
+  <div class="sec-head"><div><h2 id="merch-h">New: Pocketed merch</h2><p>Light colors, original art, tear-away neck labels on every tee.</p></div><a href="merch.html">See all merch</a></div>
+  <div class="row" id="row-merch"></div></div></section>
 
-    <section id="benefits" class="benefits-section">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Built for the moment after a sale lands.</h2>
-          <p>A clear tool for sellers who want the real number, not a prettier dashboard.</p>
-        </div>
-        <div class="benefits">
-          <article class="benefit">
-            <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="5" y="4" width="22" height="24" rx="3"/>
-              <path d="M10 12h12M10 17h12M10 22h7"/>
-            </svg>
-            <h3>Itemized, published fees</h3>
-            <p>Current Etsy (U.S.), Stripe, and Gumroad rates, broken out line by line — or a custom rate you type in.</p>
-          </article>
-          <article class="benefit">
-            <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="6" y="14" width="20" height="14" rx="2"/>
-              <path d="M10 14V10a6 6 0 0 1 12 0v4"/>
-            </svg>
-            <h3>Stays on this device</h3>
-            <p>Parsing and math run in your browser. Payout files are never uploaded to a server.</p>
-          </article>
-          <article class="benefit">
-            <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 8h14l6 6v14H6z"/>
-              <path d="M20 8v6h6M11 18h10M11 23h7"/>
-            </svg>
-            <h3>Listings or payout CSVs</h3>
-            <p>Price the next listing before you publish it, or drop last month’s statement and see what you kept.</p>
-          </article>
-          <article class="benefit">
-            <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="16" cy="16" r="11"/>
-              <path d="M16 10v12M12 13.5h5.5a2.5 2.5 0 0 1 0 5H13"/>
-            </svg>
-            <h3>A reserve you control</h3>
-            <p>Set aside a percentage of profit for taxes. You choose the rate. Pocketed does not file anything, and this is not tax advice.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+<section class="section" aria-labelledby="dept-h"><div class="wrap">
+  <div class="sec-head"><div><h2 id="dept-h">Departments</h2></div></div>
+  <div class="depts">
+    <a class="dept" href="digital.html"><img src="shop/covers/bookkeeping-starter-kit.jpg" alt="" width="96" height="96" loading="lazy"><div><strong>Digital tools &amp; templates</strong><span>All 45 spreadsheets, PDFs, templates and bundles</span></div></a>
+    <a class="dept" href="merch.html"><img src="img/merch/tote-thrift-flip-repeat-2.webp" alt="" width="96" height="96" loading="lazy"><div><strong>Merch</strong><span>All 10 tees, mugs, stickers, the tote and journal</span></div></a>
+    <a class="dept" href="deals.html"><span class="tile-img bg-butter" style="width:96px;height:96px;border-radius:12px;display:grid;place-items:center"><svg style="width:44px;height:44px;stroke:#1c2418;fill:none;stroke-width:1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg></span><div><strong>Deals <span class="badge b-new">Launching soon</span></strong><span>Everyday finds at fair prices. Get a heads-up when it opens.</span></div></a>
+  </div></div></section>
 
-    <section id="how">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Two jobs, one clear tool.</h2>
-          <p>Price the next listing before you publish it. Then drop last month’s payout CSV and see what you actually kept.</p>
-        </div>
-        <div class="steps">
-          <article class="step">
-            <p class="num">01</p>
-            <h3>Price a listing</h3>
-            <p>Enter the price, shipping, costs, and an optional tax reserve. Pocketed applies current published fees for Etsy (U.S.), Stripe, or Gumroad direct sales — or a custom rate you type in.</p>
-          </article>
-          <article class="step">
-            <p class="num">02</p>
-            <h3>Or drop a payout CSV</h3>
-            <p>Export your payment account statement from Etsy, Stripe, or another platform. Columns are mapped automatically when the headers are recognizable. Sales, fees, refunds, and bank deposits are separated.</p>
-          </article>
-          <article class="step">
-            <p class="num">03</p>
-            <h3>Export or print</h3>
-            <p>Download a cleaned summary or print a one-page report. Nothing is uploaded to a server. Shop defaults can be saved in this browser only.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+<section class="section" id="bundles" aria-labelledby="bundles-h"><div class="wrap">
+  <div class="sec-head"><div><h2 id="bundles-h">Bundles</h2><p>Several tools in one download.</p></div><a href="digital.html?k=Bundles">See all bundles</a></div>
+  <div class="row" id="row-bundles"></div></div></section>
+<section class="section" id="under6" aria-labelledby="under6-h"><div class="wrap">
+  <div class="sec-head"><div><h2 id="under6-h">Under $6</h2><p>Small tools that fix one job.</p></div><a href="shop.html?price=u6">See all under $6</a></div>
+  <div class="row" id="row-under6"></div></div></section>
 
-    <section>
-      <div class="wrap split">
-        <div>
-          <h2>Fees are not a rounding error.</h2>
-          <p>Etsy charges a $0.20 listing fee, a 6.5% transaction fee on the item and the shipping you charge, and a U.S. payment-processing fee of 3% + $0.25 on the total including sales tax. Offsite Ads can add 15% or 12%, capped at $100 per order. Those are Etsy’s own figures, not ours.</p>
-          <p>Stripe’s standard U.S. domestic card rate is 2.9% + $0.30. Gumroad direct sales take 10% + $0.50 plus card processing of 2.9% + $0.30 (Discover marketplace sales are a flat 30%, including processing).</p>
-          <p class="note">Sellers already build spreadsheets for this because payout dashboards show gross more clearly than take-home. Pocketed is that spreadsheet, without the setup, and without sending financial files to somebody else’s server.</p>
-        </div>
-        <div>
-          <h2>Who it’s for</h2>
-          <ul>
-            <li>Etsy sellers who want the real margin on a listing before they publish it — including Offsite Ads and a tax set-aside.</li>
-            <li>Independent sellers and freelancers who get Stripe or Gumroad payout CSVs and want a monthly “what I kept” number.</li>
-            <li>Anyone who has been surprised by a payout that was much smaller than the sale price.</li>
-          </ul>
-          <p>A related one-page tool, Kept, is already sold on Gumroad as a $12 HTML file that reads a payout CSV and holds back a tax reserve. Pocketed adds official 2026 fee schedules, a listing-price calculator, a reverse “price to hit a target take-home” solver, and printable exports.</p>
-        </div>
-      </div>
-    </section>
+<section class="section" aria-labelledby="pro-h"><div class="wrap"><div class="promo">
+  <div><p class="eyebrow">Free calculator · Pro upgrade</p><h2 id="pro-h">See what you actually keep from every sale.</h2>
+  <p>The free calculator itemizes marketplace fees, your costs and a tax reserve you choose. Pocketed Pro ($19 once) adds unlimited payout CSVs, reverse pricing and exports.</p>
+  <p style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="app.html">Free calculator</a><a class="btn btn-outline lemonsqueezy-button" href="https://pcketedapp.lemonsqueezy.com/checkout/buy/44e338e5-789f-4146-938b-cc03b61c46f0">Buy Pro – $19</a><a class="btn btn-ghost" href="pro.html">How it works</a></p></div>
+  <table class="ledger" aria-label="Worked example: a $50 Etsy sale"><caption class="small muted" style="text-align:left;caption-side:top;padding-bottom:6px">Worked example · $50 Etsy sale (U.S.)</caption><tbody>
+  <tr><td>Sale price</td><td>$50.00</td></tr><tr><td>Etsy fees (listing, 6.5%, 3% + $0.25)</td><td>−$5.20</td></tr><tr><td>Cost of goods (example)</td><td>−$15.00</td></tr><tr><td>Tax reserve you set (30%)</td><td>−$8.94</td></tr><tr class="take"><td>Pocketed</td><td>$20.86</td></tr></tbody></table>
+</div></div></section>
 
-    <section id="pricing">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Simple pricing, paid once.</h2>
-          <p>A one-time $19 purchase unlocks Pro. Checkout is handled by Lemon Squeezy, and your license key arrives by email. Shop templates are sold separately as instant downloads.</p>
-        </div>
-        <div class="pricing">
-          <article class="price-card">
-            <h3>Free</h3>
-            <p class="amt">$0 <span>forever</span></p>
-            <ul>
-              <li>Price a listing on Etsy (U.S.), Stripe, Gumroad, or a custom fee</li>
-              <li>Itemized fees, costs, and a tax reserve you control</li>
-              <li>Works offline after the page has loaded</li>
-              <li>Try one of your own payout CSVs, plus the sample files</li>
-            </ul>
-            <a class="btn btn-ghost btn-wide" href="app.html">Open the calculator</a>
-          </article>
-          <article class="price-card featured">
-            <p class="price-badge">One-time</p>
-            <h3>Pocketed Pro</h3>
-            <p class="amt">$19 <span>once, yours to keep</span></p>
-            <ul>
-              <li>Everything in the free calculator</li>
-              <li>Drop unlimited payout CSVs (Etsy, Stripe, and generic statements)</li>
-              <li>Reverse-price a listing to hit a target take-home</li>
-              <li>Export a cleaned summary CSV and print a one-page report</li>
-              <li>Save shop defaults in this browser</li>
-            </ul>
-            <a class="btn btn-copper btn-wide lemonsqueezy-button" href="https://pcketedapp.lemonsqueezy.com/checkout/buy/44e338e5-789f-4146-938b-cc03b61c46f0">Buy Pro — $19</a>
-          </article>
-        </div>
-        <p class="fine">Payments are handled by Lemon Squeezy, which can collect sales tax and VAT on digital products. No subscription. Not affiliated with Etsy, Stripe, or Gumroad.</p>
-      </div>
-    </section>
+<section class="section" id="recent" hidden aria-labelledby="recent-h"><div class="wrap">
+  <div class="sec-head"><div><h2 id="recent-h">Recently viewed</h2></div><button class="linkbtn" id="clear-recent" type="button">Clear</button></div>
+  <div class="row" id="row-recent"></div></div></section>
 
-    <section id="merch" class="merch-soon" aria-labelledby="merch-heading">
-      <div class="wrap merch-soon-inner">
-        <p class="eyebrow">Print on demand</p>
-        <h2 id="merch-heading">Merch coming soon</h2>
-        <p>Seller tees, mugs, journals, stickers and totes, printed when someone orders — so we never have to hold a product. Nothing to buy yet. This shop stays digital until that storefront is ready.</p>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Questions</h2>
-        </div>
-        <div class="faq">
-          <details open>
-            <summary>Do you upload my payout files?</summary>
-            <p>No. Parsing happens in this browser. You can disconnect from the network after the page loads and the tool still works, including the sample files packaged with the app.</p>
-          </details>
-          <details>
-            <summary>Is this tax, legal, or accounting advice?</summary>
-            <p>No. The tax reserve is a percentage you choose so you can set money aside. Self-employed people in the United States often owe income tax and self-employment tax and may need to make quarterly estimated payments — confirm filings with a CPA or the IRS. Pocketed does not file anything and does not connect to your shop.</p>
-          </details>
-          <details>
-            <summary>Which fee rates do you use?</summary>
-            <p>Published rates as of 11 November 2026, cited on the Sources section and inside the app. Platforms change fees. If a rate looks stale, check the official page and use Custom fees, or ask for an update.</p>
-          </details>
-          <details>
-            <summary>What if my CSV looks different?</summary>
-            <p>If the usual headers are present (Amount, Fees, Net, Date, Type), mapping is automatic. If not, you can assign columns yourself. Bank-deposit rows are kept out of the sales total so a transfer isn’t counted as a loss.</p>
-          </details>
-          <details>
-            <summary>How do shop downloads work?</summary>
-            <p>Each product is a digital file (spreadsheet, PDF, Word template or ZIP bundle). After you pay, Lemon Squeezy emails the download. Checkout is a secure overlay — you never leave this site to start payment. There are no physical items in the shop today.</p>
-          </details>
-          <details>
-            <summary>When will merch be available?</summary>
-            <p>A print-on-demand merch shop is in the works. There is nothing to buy yet, and there is no storefront link until it is ready.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section id="sources">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Sources, not slogans.</h2>
-          <p>Every fee in the calculator is taken from a public official page, last checked 11 November 2026 (America/New_York). Demand evidence is also linked, not invented.</p>
-        </div>
-        <div class="sources">
-          <article class="source-card">
-            <strong>Etsy U.S. selling fees</strong>
-            $0.20 listing, 6.5% transaction, 3% + $0.25 processing, Offsite Ads 15% or 12% capped at $100. <a href="https://www.etsy.com/sell">etsy.com/sell</a> · <a href="https://help.etsy.com/hc/en-us/articles/115014483627-What-are-the-Fees-and-Taxes-for-Selling-on-Etsy">Fees &amp; taxes help</a> · <a href="https://help.etsy.com/hc/en-us/articles/115015628847-What-are-Payment-Processing-Fees-for-Selling-on-Etsy">Processing fees help</a>
-          </article>
-          <article class="source-card">
-            <strong>Stripe and Gumroad</strong>
-            Stripe standard U.S. domestic cards: 2.9% + $0.30. <a href="https://stripe.com/pricing">stripe.com/pricing</a>. Gumroad direct sales: 10% + $0.50 plus 2.9% + $0.30 card processing; Discover is 30% all-in. <a href="https://gumroad.com/help/article/66-gumroads-fees">Gumroad fee policy</a>
-          </article>
-          <article class="source-card">
-            <strong>People already pay for this job</strong>
-            Kept, a one-page payout-CSV tool with a tax reserve, is sold for $12 on Gumroad. <a href="https://foremandirt.gumroad.com/l/nxbyr">Kept on Gumroad</a>
-          </article>
-          <article class="source-card">
-            <strong>Sellers ask for the same breakdown</strong>
-            In r/EtsySellers, a seller shared a public fee-and-profit spreadsheet because people were “confused about Etsy fees” and “hidden” processing fees. <a href="https://www.reddit.com/r/EtsySellers/comments/tha4ma/etsy_fee_calculator/">Thread</a>. IRS pages on <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes">self-employment tax</a> and <a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes">estimated taxes</a> explain why a reserve setting exists at all.
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <p class="footer-brand">Pocketed</p>
-        <p>See what you actually keep from every sale. Instant-download seller tools and a free take-home calculator.</p>
-      </div>
-      <div>
-        <p class="footer-label">Shop</p>
-        <ul>
-          <li><a href="shop.html?kind=Spreadsheets">Spreadsheets</a></li>
-          <li><a href="shop.html?kind=Printables/PDFs">Printables/PDFs</a></li>
-          <li><a href="shop.html?kind=Templates">Templates</a></li>
-          <li><a href="shop.html?kind=Bundles">Bundles</a></li>
-          <li><a href="shop.html">All 45 products</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-label">Calculator</p>
-        <ul>
-          <li><a href="app.html">Free calculator</a></li>
-          <li><a href="#pricing">Pocketed Pro — $19</a></li>
-          <li><a href="#sources">Fee sources</a></li>
-          <li><a href="#faq">Questions</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-label">Coming soon</p>
-        <p>Merch coming soon. Seller tees, mugs, journals, stickers and totes, printed when someone orders. Nothing to buy yet.</p>
-      </div>
-    </div>
-    <div class="wrap footer-legal">
-      <span>Pocketed · digital downloads, no physical items ship · not affiliated with Etsy, Stripe, Gumroad, Shopify or eBay.</span>
-      <span>Not tax, legal, or accounting advice. Secure checkout by Lemon Squeezy.</span>
-    </div>
-  </footer>
-  <script src="shop.js" defer></script>
-  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+</main>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="about"><a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2.5" y="2.5" width="27" height="27" rx="7" fill="#fff6ea" stroke="#1c2418" stroke-width="1.7"/><path d="M9 13.2 V21.2 C9 24.1 11.8 26.4 16 26.4 C20.2 26.4 23 24.1 23 21.2 V13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linejoin="round"/><path d="M9 13.2 C12.4 16.2 19.6 16.2 23 13.2" fill="none" stroke="#1c2418" stroke-width="1.55" stroke-linecap="round"/><circle cx="16" cy="19.2" r="2.35" fill="#c2410c"/></svg><span>Pocketed</span></a>
+      <p class="small muted" style="margin-top:10px">Tools, templates and merch for people who sell online. Small shop, real policies, no fake reviews.</p>
+      <p class="small"><a href="mailto:tfcn899d@mail.grokbot.com">tfcn899d@mail.grokbot.com</a></p></div>
+    <div><h2>Shop</h2><ul><li><a href="digital.html">Digital tools</a></li><li><a href="merch.html">Merch</a></li><li><a href="deals.html">Deals (soon)</a></li><li><a href="shop.html">All products</a></li></ul></div>
+    <div><h2>Free tools</h2><ul><li><a href="app.html">Take-home calculator</a></li><li><a href="pro.html">Pocketed Pro</a></li><li><a href="bag.html#saved">Saved list</a></li></ul></div>
+    <div><h2>Help</h2><ul><li><a href="help.html">Help center</a></li><li><a href="shipping.html">Shipping &amp; delivery</a></li><li><a href="returns.html">Returns &amp; refunds</a></li><li><a href="contact.html">Contact us</a></li></ul></div>
+    <div><h2>Policies</h2><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© 2026 Pocketed</span><span>Digital checkout by Lemon Squeezy · Merch checkout and fulfillment by Printify</span><span>Not affiliated with Etsy, eBay, Walmart, Amazon or any marketplace.</span></div>
+</footer>
+<nav class="bnav" aria-label="Mobile">
+  <a href="index.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9H4z"/><path d="M10 20v-6h4v6"/></svg>Home</a>
+  <button type="button" data-open-mega aria-controls="mega" aria-expanded="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Departments</button>
+  <button type="button" data-focus-search><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Search</button>
+  <a href="bag.html#saved" data-saved-label><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Saved<b class="count" data-saved-count data-zero>0</b></a>
+  <a href="bag.html" data-bag-label><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Bag<b class="count" data-bag-count data-zero>0</b></a>
+</nav>
+<script src="store/data.js"></script>
+<script src="store.js" defer></script>
+<script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 </body>
 </html>

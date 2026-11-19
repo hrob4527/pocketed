@@ -367,9 +367,9 @@ test("all 45 shop products have live Lemon Squeezy checkout URLs", () => {
 });
 
 test("most-wanted featured slugs exist in the catalog and kinds cover every product", () => {
-  const js = fs.readFileSync(path.join(__dirname, "shop.js"), "utf8");
+  const js = fs.readFileSync(path.join(__dirname, "store.js"), "utf8");
   const match = js.match(/var FEATURED = \[([^\]]+)\]/);
-  assert.ok(match, "FEATURED list missing from shop.js");
+  assert.ok(match, "FEATURED list missing from store.js");
   const slugs = match[1].split(",").map((s) => s.replace(/['"\s]/g, "")).filter(Boolean);
   assert.ok(slugs.length >= 6 && slugs.length <= 10, "expected 6-10 featured products");
   const cat = JSON.parse(fs.readFileSync(path.join(__dirname, "shop", "catalog.json"), "utf8"));
@@ -395,27 +395,118 @@ test("most-wanted featured slugs exist in the catalog and kinds cover every prod
   }
 });
 
-test("storefront pages are light-themed, searchable, and keep Lemon Squeezy checkout", () => {
-  const css = fs.readFileSync(path.join(__dirname, "styles.css"), "utf8");
-  assert.doesNotMatch(css, /prefers-color-scheme\s*:\s*dark/);
-  assert.match(css, /--paper:\s*#(fff|fffff|fffdf8|fffaf2|ffffff)/i);
-  for (const name of ["index.html", "shop.html"]) {
-    const html = fs.readFileSync(path.join(__dirname, name), "utf8");
-    assert.match(html, /app\.lemonsqueezy\.com\/js\/lemon\.js/);
-    assert.match(html, /property="og:title"/);
-    assert.match(html, /property="og:description"/);
-    assert.match(html, /property="og:image"/);
-    assert.match(html, /Merch coming soon/);
-    assert.match(html, /Instant download/);
-    assert.match(html, /Secure checkout by Lemon Squeezy/);
-    assert.match(html, /Spreadsheets/);
-    assert.match(html, /Printables\/PDFs/);
-    assert.match(html, /Free calculator/);
-    assert.doesNotMatch(html, /bestseller|star rating|★★|testimonials?/i);
+// ---------- Store v2 checks ----------
+function loadStoreData() {
+  const src = fs.readFileSync(path.join(__dirname, "store", "data.js"), "utf8");
+  const sandbox = {};
+  new Function("window", src)(sandbox);
+  return sandbox.PKT;
+}
+const STORE_PAGES = ["index.html", "shop.html", "digital.html", "merch.html", "deals.html", "bag.html",
+  "help.html", "shipping.html", "returns.html", "contact.html", "privacy.html", "terms.html"];
+const BANNED = /bestseller|best seller|star rating|★|☆|testimonials?|people bought|\d+\+? (sold|bought)|only \d+ left|hurry|selling fast|ends in \d/i;
+
+test("store data keeps every Lemon Squeezy checkout URL exactly", () => {
+  const D = loadStoreData();
+  const cat = JSON.parse(fs.readFileSync(path.join(__dirname, "shop", "catalog.json"), "utf8")).products;
+  const dig = D.items.filter((i) => i.d === "digital");
+  assert.strictEqual(dig.length, 45);
+  for (const p of cat) {
+    const it = dig.find((i) => i.id === p.slug);
+    assert.ok(it, "missing digital item " + p.slug);
+    assert.strictEqual(it.url, p.checkout_url, "checkout URL changed for " + p.slug);
+    assert.strictEqual(it.p, p.price, "price changed for " + p.slug);
+    const page = fs.readFileSync(path.join(__dirname, "p", p.slug + ".html"), "utf8");
+    assert.ok(page.includes('href="' + p.checkout_url + '"'), "product page lacks checkout link for " + p.slug);
+    assert.match(page, /lemonsqueezy-button/);
+    assert.match(page, /app\.lemonsqueezy\.com\/js\/lemon\.js/);
   }
-  const shopJs = fs.readFileSync(path.join(__dirname, "shop.js"), "utf8");
-  assert.match(shopJs, /lemonsqueezy-button/);
-  assert.match(shopJs, /createLemonSqueezy/);
+});
+
+test("merch items link to the Printify Pop-Up Store with real images and no false claims", () => {
+  const D = loadStoreData();
+  const merch = D.items.filter((i) => i.d === "merch");
+  assert.strictEqual(merch.length, 10);
+  for (const m of merch) {
+    assert.match(m.url, /^https:\/\/pocketed\.printify\.me\/product\/\d+$/, "bad Printify URL for " + m.id);
+    assert.ok(m.p > 0 && m.p < 40, "price out of range for " + m.id);
+    assert.ok(fs.existsSync(path.join(__dirname, m.img)), "missing image " + m.img);
+    const page = fs.readFileSync(path.join(__dirname, "p", m.id + ".html"), "utf8");
+    assert.ok(page.includes(m.url), "product page lacks Printify link for " + m.id);
+    assert.match(page, /Checks out on Printify/);
+    assert.doesNotMatch(page, /adaptive|magnetic closure|seated fit|sensory[- ]friendly|wheelchair/i, "unverified accessibility claim on " + m.id);
+  }
+  const ids = new Set(D.items.map((i) => i.id));
+  assert.strictEqual(ids.size, D.items.length, "duplicate item ids");
+});
+
+test("deals department is 'launching soon' with no prices or buy links", () => {
+  const html = fs.readFileSync(path.join(__dirname, "deals.html"), "utf8");
+  const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+  assert.match(main, /Launching soon/i);
+  assert.doesNotMatch(main, /\$\d/, "deals page shows a price");
+  assert.doesNotMatch(main, /cjdropshipping|lemonsqueezy-button|printify\.me/i, "deals page has a buy link");
+  const D = loadStoreData();
+  assert.ok(D.deals.length >= 6);
+  assert.ok(!D.items.some((i) => i.d === "deals"), "deals items must not be listed yet");
+});
+
+test("store pages are light, accessible and SEO-ready, with honest copy", () => {
+  const css = fs.readFileSync(path.join(__dirname, "store.css"), "utf8");
+  assert.doesNotMatch(css, /prefers-color-scheme\s*:\s*dark/);
+  assert.match(css, /--paper:\s*#fffdf8/i);
+  assert.match(css, /color-scheme:\s*light/);
+  const files = STORE_PAGES.concat(fs.readdirSync(path.join(__dirname, "p")).map((f) => "p/" + f));
+  for (const name of files) {
+    const html = fs.readFileSync(path.join(__dirname, name), "utf8");
+    assert.match(html, /<html lang="en"/, name);
+    assert.match(html, /<title>[^<]+<\/title>/, name);
+    assert.match(html, /name="description"/, name);
+    assert.match(html, /property="og:title"/, name);
+    assert.match(html, /property="og:image"/, name);
+    assert.match(html, /class="skip" href="#main"/, name);
+    assert.match(html, /id="search-form"/, name);
+    assert.match(html, /aria-controls="mega"/, name);
+    assert.doesNotMatch(html, BANNED, "banned hype or fake social proof in " + name);
+    const imgs = html.match(/<img\b[^>]*>/g) || [];
+    for (const tag of imgs) assert.match(tag, /\balt="/, "img without alt in " + name + ": " + tag);
+    for (const m of html.matchAll(/(?:href|src)="((?:\.\.\/)?[a-z0-9_\-/]+\.(?:html|css|js|jpg|webp|png))(?:[?#][^"]*)?"/gi)) {
+      const target = path.normalize(path.join(path.dirname(path.join(__dirname, name)), m[1]));
+      assert.ok(fs.existsSync(target), "broken local link in " + name + ": " + m[1]);
+    }
+  }
+  const home = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+  for (const s of ["Instant download", "Secure checkout by Lemon Squeezy", "Spreadsheets", "Free take-home pay calculator", "Printed to order", "application/ld+json", "SearchAction"]) {
+    assert.ok(home.includes(s), "home missing " + s);
+  }
+  assert.ok(home.includes("https://pcketedapp.lemonsqueezy.com/checkout/buy/44e338e5-789f-4146-938b-cc03b61c46f0"), "Pro checkout missing from home");
+  const tee = fs.readFileSync(path.join(__dirname, "p", "tee-pocketed-it.html"), "utf8");
+  assert.match(tee, /"@type": "Product"/);
+  assert.match(tee, /"priceCurrency": "USD"/);
+});
+
+test("search finds synonyms and small typos across departments", () => {
+  const D = loadStoreData();
+  const doc = { documentElement: { getAttribute: () => "" }, body: { getAttribute: () => "" }, querySelector: () => null, querySelectorAll: () => [], addEventListener() {} };
+  const win = { PKT: D, addEventListener() {}, location: { search: "" } };
+  const src = fs.readFileSync(path.join(__dirname, "store.js"), "utf8");
+  new Function("window", "document", "localStorage", "history", "location", src)(win, doc, { getItem: () => null, setItem() {} }, {}, { search: "" });
+  const S = win.PocketedStore.search;
+  const ids = (q) => S(q).map((p) => p.id);
+  assert.ok(ids("shirt").includes("tee-pocketed-it"), "shirt -> tee");
+  assert.ok(ids("coffee").includes("mug-ship-day-fuel"), "coffee -> mug");
+  assert.ok(ids("taxes").includes("tax-set-aside-planner"), "taxes -> tax planner");
+  assert.ok(ids("inventroy").includes("inventory-tracker"), "typo tolerance");
+  assert.strictEqual(S("zzzzqqq").length, 0);
+});
+
+test("pro landing and calculator still link the Pro checkout", () => {
+  for (const name of ["pro.html", "app.html"]) {
+    const html = fs.readFileSync(path.join(__dirname, name), "utf8");
+    assert.ok(html.includes("https://pcketedapp.lemonsqueezy.com/checkout/buy/44e338e5-789f-4146-938b-cc03b61c46f0"), name);
+    assert.match(html, /app\.lemonsqueezy\.com\/js\/lemon\.js/);
+    assert.doesNotMatch(html, /Merch coming soon/);
+  }
 });
 
 (async () => {

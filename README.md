@@ -1,5 +1,18 @@
 # Pocketed
 
+## Store (v2)
+
+A static, bright storefront on GitHub Pages with three departments:
+
+- **Digital tools** (45 products): check out on Lemon Squeezy (overlay), URLs from `shop/catalog.json`.
+- **Merch** (10 products): link to the Printify Pop-Up Store (`https://pocketed.printify.me/product/<id>`), data in `tools/merch.json`, images in `img/merch/`.
+- **Deals**: "launching soon" page only (`tools/deals.json`). No prices or buy links until CJ stock and shipping are verified.
+
+Features: header search with autocomplete (synonyms and typo tolerance), "All departments" mega-menu, category pages with filters/sort/chips (`shop.html`, `digital.html`, `merch.html`), static product pages in `p/`, a localStorage bag + saved list + recently viewed (`bag.html`), mobile bottom nav, Help/Shipping/Returns/Contact/Privacy/Terms pages, JSON-LD, sitemap.
+
+Pages are generated: edit `tools/build.py` or the JSON sources, then run `python3 tools/build.py`. Runtime code is `store.js` + `store.css`; `store/data.js` is generated. The old landing page lives at `pro.html`; the calculator is still `app.html`.
+
+
 See what you actually keep from every sale.
 
 A small browser app that shows online sellers what they actually keep after marketplace fees, their own costs, and a tax reserve they choose.

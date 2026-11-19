@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hrob4527.github.io/pocketed/sitemap.xml

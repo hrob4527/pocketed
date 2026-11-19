@@ -1,0 +1,69 @@
+{
+ "note": "Deals is launching soon. Categories only: no prices or buy links until CJ US-warehouse stock, shipping and pricing are verified (see /workspace/deals-store/catalog.json).",
+ "categories": [
+  {
+   "slug": "fashion-lounge",
+   "name": "Fashion & Lounge",
+   "icon": "coat",
+   "bg": "bg-peach",
+   "blurb": "Cozy sets, cardigans, winter wear",
+   "kw": "clothes clothing coat hoodie cardigan pajamas loungewear gloves winter"
+  },
+  {
+   "slug": "home-cozy",
+   "name": "Home & Cozy",
+   "icon": "home",
+   "bg": "bg-butter",
+   "blurb": "Night lights, wearable blankets",
+   "kw": "home light blanket projector cozy decor"
+  },
+  {
+   "slug": "pets",
+   "name": "Pets",
+   "icon": "paw",
+   "bg": "bg-mint",
+   "blurb": "Grooming, play and travel",
+   "kw": "pet pets dog cat grooming ramp playpen"
+  },
+  {
+   "slug": "kitchen-gifts",
+   "name": "Kitchen & Gifts",
+   "icon": "pot",
+   "bg": "bg-sky",
+   "blurb": "Handy helpers and stocking stuffers",
+   "kw": "kitchen gift gifts sink gloves lint shaver"
+  },
+  {
+   "slug": "kids-toys",
+   "name": "Kids & Toys",
+   "icon": "toy",
+   "bg": "bg-lilac",
+   "blurb": "Advent calendars, play",
+   "kw": "kids toys toy advent robot children"
+  },
+  {
+   "slug": "beauty",
+   "name": "Beauty",
+   "icon": "spark",
+   "bg": "bg-peach",
+   "blurb": "Travel-size styling",
+   "kw": "beauty hair curling iron"
+  },
+  {
+   "slug": "desk-side-hustle",
+   "name": "Desk & Side Hustle",
+   "icon": "desk",
+   "bg": "bg-cream",
+   "blurb": "Tools for makers",
+   "kw": "desk tools work wire stripper"
+  },
+  {
+   "slug": "jewelry-accessories",
+   "name": "Jewelry & Accessories",
+   "icon": "gem",
+   "bg": "bg-sky",
+   "blurb": "Everyday sparkle",
+   "kw": "jewelry earrings accessories"
+  }
+ ]
+}
